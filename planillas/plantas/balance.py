@@ -185,16 +185,16 @@ def agregar(wb):
         if datos:
             ext=[m for m in datos if m[1]=="ext"]; inte=[m for m in datos if m[1]=="int"]
             for m in ext:
-                renglon("AISLADAS (%s)"%m[2], 20, largo=m[0], alto=H)
-            for _ in range(max(0, 2-len(ext))): renglon("AISLADAS (    )", 20)
+                renglon("AISLADAS (%s)"%m[2] if m[2] else "AISLADAS", 20, largo=m[0], alto=H)
+            for _ in range(max(0, 2-len(ext))): renglon("AISLADAS", 20)
             for m in inte:
-                renglon("INTERIORES (%s)"%(m[3] or "    "), 25, largo=m[0], alto=H)
-            for _ in range(max(0, 2-len(inte))): renglon("INTERIORES (    )", 25)
+                renglon("INTERIORES (%s)"%m[3] if m[3] else "INTERIORES", 25, largo=m[0], alto=H)
+            for _ in range(max(0, 2-len(inte))): renglon("INTERIORES", 25)
         else:
-            for _ in range(MUROS_EXT): renglon("AISLADAS (    )", 20)
+            for _ in range(MUROS_EXT): renglon("AISLADAS", 20)
             lados = PAREDES.get(nombre) or ([a, b_, a, b_] + ([ex[0], ex[1]] if ex else []))
             for largo in lados:
-                renglon("INTERIORES (    )", 25, largo=largo, alto=H)
+                renglon("INTERIORES", 25, largo=largo, alto=H)
 
         celda(r,1,"3",b=True); celda(r,2,"TECHOS O CIELORRASOS",b=True,al=L)
         celda(r,3); celda(r,4); celda(r,5); celda(r,6); r+=1
