@@ -8,6 +8,34 @@ conviene tener preparados para explicar.
 
 ---
 
+# 0. De dónde salió cada método
+
+**Este trabajo se hizo sin tener a la vista el apunte de la cátedra.** Los
+métodos se dedujeron de las **planillas de ejemplo**: mirando las filas ya
+resueltas y probando qué fórmula reproduce esos números. Donde el ejemplo traía
+una fila calculada, la fórmula está verificada contra ella; donde no, se adoptó
+el criterio corriente.
+
+| Procedencia | Qué se tomó de ahí |
+|---|---|
+| **Planillas de ejemplo de la cátedra** (verificado contra filas resueltas) | Los coeficientes 1/9 y 1/3 de iluminación y ventilación. Todos los factores del balance térmico (60, 25, 20, 30, 15, 10, 6, 9, 12) y el FI = 1,07. El cálculo del radiador, incluido el factor 1,12. El método de losas por tensiones admisibles (σ = 2400 kg/cm², z = 0,9 h, repartición As/5). La fórmula de corte τ = V / (b · 0,85 h), deducida probándola contra una fila resuelta. |
+| **CIRSOC 201 y práctica corriente** (no de la cátedra) | El dimensionado de vigas y columnas por rotura y los coeficientes φ. La fórmula simplificada de muro portante usada en tabiques. |
+| **Ordenanza 8757/11**, consultada en internet | Los valores de factor de exposición solar y los cuadrantes. Las transmitancias máximas. |
+| **Documentación de obra** | Toda la geometría: planos de planta, despieces de locales, planilla de carpinterías, plano de fachadas, detalles constructivos y cómputo métrico. |
+
+## Lo que conviene chequear contra el apunte, en orden de importancia
+
+1. **Los factores del balance térmico.** Si la cátedra da una tabla distinta,
+   cambian todos los números del balance.
+2. **Si hay tabla de FO y FZ.** Acá valen 1,00 porque es lo que usa la planilla
+   de ejemplo. Si el apunte trae tabla de corrección, hay que aplicarla.
+3. **Los coeficientes 1/9 y 1/3.** Algunos reglamentos usan 1/8 o 1/10 según la
+   clase de local.
+4. **El método de tabiques.** Es el que más se adoptó por criterio propio: la
+   planilla de la cátedra solo traía las cargas, no la fórmula de capacidad.
+
+---
+
 # 1. Planilla de iluminación y ventilación
 
 ## El criterio
