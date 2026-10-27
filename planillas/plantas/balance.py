@@ -83,7 +83,7 @@ CROQUIS = {"01 - Cocina / comedor": "01-cocina", "06 - Living / comedor": "06-li
            "11 - Bano visitas": "11-bano-visitas", "Escalera": "escalera",
            "13 - Dormitorio Norte": "13-dormitorio-norte", "14 - Play room": "14-play-room",
            "15 - Dormitorio Sur": "15-dormitorio-sur", "17 - Bano": "17-bano"}
-ANCHO_CROQUIS = 340   # pixeles; el alto sale de la proporcion de la imagen
+ANCHO_CROQUIS = 460   # pixeles; el alto sale de la proporcion de la imagen
 ALTO_FILA_PT = 39.7   # la altura de fila que aplica el libro, en puntos
 TOALLERO = {"10 - Bano suite", "11 - Bano visitas", "17 - Bano"}
 MUROS_EXT = 4   # renglones en blanco: los muros que dan al exterior

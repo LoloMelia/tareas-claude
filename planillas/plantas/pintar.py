@@ -8,7 +8,7 @@ borde, y se apaga el rojo de los demas locales.
 import collections, sys
 import numpy as np
 import pdfplumber
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from scipy import ndimage
 
 DPI = 200
@@ -17,6 +17,15 @@ ALFA = 0.33                 # transparencia
 BLANCO = (255, 255, 255)    # las marcas rojas de los demas locales desaparecen
 BORDE = (110, 110, 110)     # el contorno del local sombreado, gris y fino
 ROTULO = (40, 40, 40)       # el nombre del local
+TIPOGRAFIA = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+
+# como se escribe el nombre de cada local arriba del sombreado
+NOMBRES = {"01-cocina": "01 - COCINA / COMEDOR", "06-living": "06 - LIVING / COMEDOR",
+           "07-hall": "07 - HALL / INGRESO", "08-vestidor": "08 - VESTIDOR",
+           "09-suite": "09 - DORMITORIO SUITE", "10-bano-suite": "10 - BANO SUITE",
+           "11-bano-visitas": "11 - BANO VISITAS", "escalera": "ESCALERA",
+           "13-dormitorio-norte": "13 - DORMITORIO NORTE", "14-play-room": "14 - PLAY ROOM",
+           "15-dormitorio-sur": "15 - DORMITORIO SUR", "17-bano": "17 - BANO"}
 NEGRO = (0, 0, 0)           # mesadas, bachas y demas dibujos de color
 
 def rotulos(pdf):
@@ -73,7 +82,27 @@ def buscar_semilla(libre, px, py, radio=60):
                 return x, y
     return None
 
-def generar(pdf, png, destino, locales, margen=0.07):
+def escribir(img, texto, xs, ys):
+    """Escribe el nombre del local, horizontal y centrado en el sombreado."""
+    d = ImageDraw.Draw(img)
+    ancho = np.ptp(xs) + 1
+    tam = 30
+    while tam > 11:
+        fuente = ImageFont.truetype(TIPOGRAFIA, tam)
+        if d.textlength(texto, font=fuente) < 0.92 * ancho:
+            break
+        tam -= 1
+    x0, y0, x1, y1 = d.textbbox((0, 0), texto, font=fuente)
+    cx, cy = xs.mean(), ys.mean()
+    caja = (cx - (x1 - x0) / 2 - 5, cy - (y1 - y0) / 2 - 4,
+            cx + (x1 - x0) / 2 + 5, cy + (y1 - y0) / 2 + 4)
+    placa = tuple(int(255 * (1 - ALFA) + GRIS[i] * ALFA) for i in range(3))
+    d.rectangle(caja, fill=placa)           # un respiro para que se lea
+    d.text((cx - (x1 - x0) / 2 - x0, cy - (y1 - y0) / 2 - y0), texto,
+           font=fuente, fill=ROTULO)
+
+
+def generar(pdf, png, destino, locales, margen=0.16):
     """Una imagen por local, todas con el mismo encuadre."""
     rot, ancho_pt, _ = rotulos(pdf)
     base = Image.open(png).convert("RGB")
@@ -98,7 +127,8 @@ def generar(pdf, png, destino, locales, margen=0.07):
             print("  el relleno se escapo en", clave); continue
         regiones[nombre] = reg
 
-    # encuadre comun: la union de todos los locales mas un margen
+    # encuadre comun: la casa entera (los locales mas un margen amplio, que es
+    # lo que toman galeria, terrazas y patios alrededor)
     union = np.zeros_like(roja)
     for reg in regiones.values():
         union |= reg
@@ -124,18 +154,28 @@ def generar(pdf, png, destino, locales, margen=0.07):
         cerca = ndimage.binary_dilation(quedan, iterations=2)
         salida[halo & ~cerca] = BLANCO           # el resto de las marcas, fuera
         salida[color_ajeno] = NEGRO              # mesadas y bachas en negro
+        viejo = np.zeros_like(roja)
         for e in np.unique(comp[quedan]):
             if not e: continue
             pieza = comp == e
             py, px = np.where(pieza)
             es_contorno = ((np.ptp(py) + 1) > 0.8 * alto_reg and
                            (np.ptp(px) + 1) > 0.8 * ancho_reg)
-            salida[pieza] = BORDE if es_contorno else ROTULO
+            if es_contorno:
+                salida[pieza] = BORDE
+            else:
+                viejo |= pieza               # el rotulo rotado del CAD
+        # se borra con su halo, porque si no el antialias queda marcado
+        viejo = ndimage.binary_dilation(viejo, iterations=3)
+        salida[viejo] = BLANCO
+        reg = reg | viejo        # asi el sombreado tapa el hueco que deja
         for i in range(3):
             canal = salida[..., i].astype(float)
             canal[reg] = canal[reg] * (1 - ALFA) + GRIS[i] * ALFA
             salida[..., i] = canal.astype(np.uint8)
-        Image.fromarray(salida).crop(caja).save("%s/%s.png" % (destino, nombre))
+        img = Image.fromarray(salida)
+        escribir(img, NOMBRES.get(nombre, nombre), xs, ys)
+        img.crop(caja).save("%s/%s.png" % (destino, nombre))
         resultados[nombre] = reg.sum() / f / f
         print("  %-22s ok" % nombre)
     return resultados
