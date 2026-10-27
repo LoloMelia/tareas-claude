@@ -48,7 +48,7 @@ MUROS = {
                            (7.63,"int","","galeria y living"),(3.56,"int","","deposito y lavadero")],
  "06 - Living / comedor": [(8.66,"ext","SE","PF02"),(4.06,"int","","cocina"),
                            (8.66,"int","","galeria, con la PV01"),(4.06,"int","","escalera")],
- "07 - Hall / ingreso":   [(4.00,"ext","SO","PF01, patio interior"),(2.15,"ext","","muro ciego"),
+ "07 - Hall / ingreso":   [(4.00,"ext","SO","PF01, patio interior"),(2.15,"ext","SE","puerta de ingreso"),
                            (4.00,"int","","vestidor"),(2.15,"int","","living comedor")],
  "08 - Vestidor":          [(1.70,"ext","","tramo exterior del lado largo, ciego"),
                            (3.17,"int","","resto del lado largo"),
