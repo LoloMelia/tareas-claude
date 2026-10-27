@@ -117,7 +117,7 @@ def agregar(wb):
         img = XLImage(archivo)
         alto = int(ANCHO_CROQUIS * img.height / img.width)
         img.width, img.height = ANCHO_CROQUIS, alto
-        celda(r,2,"Ubicacion del local en planta",al=L,borde=False)
+        celda(r,2,"Ubicacion en planta de %s" % nombre,al=L,borde=False,b=True)
         img.anchor = "B%d" % (r + 1)
         ws.add_image(img)
         # alto en pixeles (96 ppp) -> puntos; reparto ese alto en filas propias
