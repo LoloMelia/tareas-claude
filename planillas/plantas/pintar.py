@@ -85,13 +85,9 @@ def buscar_semilla(libre, px, py, radio=60):
 def escribir(img, texto, xs, ys):
     """Escribe el nombre del local, horizontal y centrado en el sombreado."""
     d = ImageDraw.Draw(img)
-    ancho = np.ptp(xs) + 1
-    tam = 30
-    while tam > 11:
-        fuente = ImageFont.truetype(TIPOGRAFIA, tam)
-        if d.textlength(texto, font=fuente) < 0.92 * ancho:
-            break
-        tam -= 1
+    # cuerpo fijo, proporcional a la imagen final: lo que no entra en el local
+    # se apoya igual sobre la placa, antes que quedar ilegible
+    fuente = ImageFont.truetype(TIPOGRAFIA, max(12, int(0.042 * img.width)))
     x0, y0, x1, y1 = d.textbbox((0, 0), texto, font=fuente)
     cx, cy = xs.mean(), ys.mean()
     caja = (cx - (x1 - x0) / 2 - 5, cy - (y1 - y0) / 2 - 4,
@@ -102,7 +98,10 @@ def escribir(img, texto, xs, ys):
            font=fuente, fill=ROTULO)
 
 
-def generar(pdf, png, destino, locales, margen=0.16):
+ANCHO_SALIDA = 1000   # la imagen se entrega a esta medida
+
+
+def generar(pdf, png, destino, locales, margen=0.09):
     """Una imagen por local, todas con el mismo encuadre."""
     rot, ancho_pt, _ = rotulos(pdf)
     base = Image.open(png).convert("RGB")
@@ -173,9 +172,12 @@ def generar(pdf, png, destino, locales, margen=0.16):
             canal = salida[..., i].astype(float)
             canal[reg] = canal[reg] * (1 - ALFA) + GRIS[i] * ALFA
             salida[..., i] = canal.astype(np.uint8)
-        img = Image.fromarray(salida)
-        escribir(img, NOMBRES.get(nombre, nombre), xs, ys)
-        img.crop(caja).save("%s/%s.png" % (destino, nombre))
+        img = Image.fromarray(salida).crop(caja)
+        k = ANCHO_SALIDA / img.width
+        img = img.resize((ANCHO_SALIDA, int(img.height * k)), Image.LANCZOS)
+        escribir(img, NOMBRES.get(nombre, nombre),
+                 (xs - caja[0]) * k, (ys - caja[1]) * k)
+        img.save("%s/%s.png" % (destino, nombre))
         resultados[nombre] = reg.sum() / f / f
         print("  %-22s ok" % nombre)
     return resultados
