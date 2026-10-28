@@ -9,6 +9,7 @@ import bordes
 from openpyxl.utils import get_column_letter
 
 ALTO = 19.8        # 0,7 cm en puntos
+ALTO_TITULO = 28.4  # 1 cm: filas de titulo (las que llevan relleno gris)
 
 
 def _rotulo_croquis(c):
@@ -39,7 +40,16 @@ for hoja in wb.sheetnames:
         if m.min_row in llenas:
             llenas.update(range(m.min_row, m.max_row + 1))
     orden = sorted(llenas)
-    mapa = {v: i + 1 for i, v in enumerate(orden)}
+    # en el balance se deja una fila en blanco entre un bloque y el siguiente
+    mapa = {}; n_fila = 0; primero = True
+    for v in orden:
+        n_fila += 1
+        a = o.cell(row=v, column=1).value
+        if hoja == "Balance termico" and isinstance(a, str) and a.startswith("LOCAL"):
+            if not primero:
+                n_fila += 1
+            primero = False
+        mapa[v] = n_fila
 
     anchos = {}
     for letra, dim in o.column_dimensions.items():
@@ -85,6 +95,12 @@ for hoja in wb.sheetnames:
             renglones = sum(max(1, math.ceil(len(t) / caracteres))
                             for t in c.value.split("\n"))
             alto = max(alto, renglones * (tam * 1.25) + 2)
+        titulo = any(c.fill is not None and c.fill.patternType == "solid"
+                     and (c.fill.fgColor.rgb or "")[-6:].upper() not in ("FFFFFF", "")
+                     for c in fila)
+        if titulo:
+            # 1 cm, salvo que el texto pida tres renglones o mas
+            alto = ALTO_TITULO if alto < 45 else alto
         d.row_dimensions[fila[0].row].height = round(min(alto, TOPE), 1)
 
     d.page_setup.orientation = o.page_setup.orientation

@@ -14,9 +14,9 @@ def _tiene_borde(c):
     return any(getattr(b, l).style for l in ("left", "right", "top", "bottom"))
 
 def _es_encabezado(c):
-    if c.font and c.font.bold:
-        return True
-    return bool(c.fill is not None and c.fill.patternType == "solid")
+    """Titulo = celda con relleno gris. La negrita sola no la hace titulo."""
+    return bool(c.fill is not None and c.fill.patternType == "solid"
+                and (c.fill.fgColor.rgb or "")[-6:].upper() not in ("FFFFFF", ""))
 
 def aplicar(ws):
     """Reescribe los bordes de la hoja segun la convencion."""

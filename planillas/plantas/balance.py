@@ -134,7 +134,8 @@ def agregar(wb):
 
     r=1
     ws.merge_cells(start_row=r,start_column=1,end_row=r,end_column=6)
-    celda(r,1,"FORMULARIO DE BALANCE TERMICO PARA CALEFACCION",b=True)
+    celda(r,1,"FORMULARIO DE BALANCE TERMICO PARA CALEFACCION",b=True,fill=G1)
+    for c in range(2,7): celda(r,c,fill=G1)
     celda(r,8,"largo",b=True,fill=G1); celda(r,9,"alto",b=True,fill=G1)
     r+=2
 
@@ -210,7 +211,7 @@ def agregar(wb):
             else:          renglon(desc,f,dim="",area_fija=None)
 
         celda(r,1,"5",b=True); celda(r,2,"INFILTRACION",b=True,al=L)
-        celda(r,3); celda(r,4,"VOLUMEN (m3)",b=True); celda(r,5); celda(r,6); r+=1
+        celda(r,3); celda(r,4,"VOL. (m3)",b=True); celda(r,5); celda(r,6); r+=1
         for desc,f,n in (("UNA PARED EXTERIOR",6,1),("DOS PAREDES EXTERIORES",9,2),
                          ("TRES O MAS PAREDES EXTERIORES",12,3)):
             if n==n_ext: renglon(desc,f,dim="%.2f m2 x %.2f"%(area,H),area_fija=vol)
