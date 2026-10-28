@@ -51,8 +51,8 @@ MUROS = {
  "07 - Hall / ingreso":   [(4.00,"ext","SO","PF01, patio interior"),(2.15,"ext","SE","puerta de ingreso"),
                            (4.00,"int","NE","vestidor"),(2.15,"int","NO","living comedor")],
  "08 - Vestidor":          [(4.87,"ext","SO","hall de ingreso"),
-                           (3.38,"int","NE",""),(0.57,"int","",""),(1.49,"int","NE",""),
-                           (1.66,"int","",""),(1.09,"int","","")],
+                           (3.38,"int","NE",""),(0.57,"int","NO",""),(1.49,"int","NE",""),
+                           (1.66,"int","SE","")],   # el extremo de 1,09 (NO) no tiene muro: se entra sin puerta
  "09 - Dormitorio suite": [(3.50,"ext","NE","PV03"),(3.50,"ext","SO","VA01"),
                            (3.50,"ext","SE","muro ciego"),(3.50,"int","NO","")],
  "10 - Bano suite":       [(3.38,"ext","NE","VA02"),(1.72,"int","NO","bano visitas"),
