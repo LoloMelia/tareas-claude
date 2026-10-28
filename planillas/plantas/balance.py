@@ -62,7 +62,7 @@ MUROS = {
  "Escalera":              [(4.06,"ext","NE","PF05"),
                            (1.73,"ext","SE",""),(4.06,"int","SO",""),(1.73,"int","NO","")],
  "13 - Dormitorio Norte": [(4.25,"ext","NO","VA04"),(4.25,"ext","SE","VA05"),
-                           (4.00,"ext","","muro ciego"),(4.00,"int","","")],
+                           (4.00,"ext","SO","muro ciego"),(4.00,"int","NE","")],
  "14 - Play room":        [(4.13,"ext","NO","VA04"),(4.08,"int","NE",""),
                            (4.13,"int","SE","")],   # el otro 4,08 no es muro: es la baranda de la escalera
  "15 - Dormitorio Sur":   [(4.05,"ext","SE","PV04"),(3.50,"ext","","muro ciego"),
