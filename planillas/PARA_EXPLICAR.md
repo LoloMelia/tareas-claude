@@ -464,8 +464,6 @@ computa.
 - Las **superficies** de los croquis no cierran del todo con las de la planilla.
   La más dudosa es la escalera: la planilla usa 7,02 m² (del detalle
   estructural) y la polilínea da unos 4,6 m².
-- En la lámina de fachadas la **PF05 de la escalera** figura al NE, pero el lado
-  NE de la escalera quedó cargado como pared interior. Revisar.
 - **Consultar:** si la puerta de hierro H01 se carga como abertura (factor 60) o
   queda dentro de la pared. Hoy está cargada como vidriada.
 
