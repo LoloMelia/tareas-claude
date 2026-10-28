@@ -46,8 +46,8 @@ MUROS = {
  # de un muro del mismo local, queda sin rotular.
  "01 - Cocina / comedor": [(7.63,"ext","NO","PF03 y PV02"),(3.56,"ext","SO","PF04 y VA01"),
                            (7.63,"int","SE","galeria y living"),(3.56,"int","NE","deposito y lavadero")],
- "06 - Living / comedor": [(8.66,"ext","SE","PF02"),(4.06,"int","","cocina"),
-                           (8.66,"int","NO","galeria, con la PV01"),(4.06,"int","","escalera")],
+ "06 - Living / comedor": [(8.66,"ext","SE","PF02"),(4.06,"int","NE","cocina"),
+                           (8.66,"int","NO","galeria, con la PV01"),(4.06,"int","SO","escalera")],
  "07 - Hall / ingreso":   [(4.00,"ext","SO","PF01, patio interior"),(2.15,"ext","SE","puerta de ingreso"),
                            (4.00,"int","NE","vestidor"),(2.15,"int","NO","living comedor")],
  "08 - Vestidor":          [(1.70,"ext","","tramo exterior del lado largo, ciego"),
