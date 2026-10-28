@@ -7,6 +7,7 @@ borrar filas en el lugar descoloca las celdas combinadas y las imagenes.
 import copy, io, sys, math, openpyxl
 import bordes
 from openpyxl.drawing.image import Image as XLImage
+from openpyxl.worksheet.pagebreak import Break
 from openpyxl.utils import get_column_letter
 
 ALTO = 19.8        # 0,7 cm en puntos
@@ -121,6 +122,12 @@ for hoja in wb.sheetnames:
             if necesario > actual:
                 d.row_dimensions[nueva].height = necesario
 
+    # en el balance, cada local empieza en una pagina nueva
+    if hoja == "Balance termico":
+        for v in orden:
+            a1 = o.cell(row=v, column=1).value
+            if isinstance(a1, str) and a1.startswith("LOCAL") and mapa[v] > 3:
+                d.row_breaks.append(Break(id=mapa[v] - 2))
     d.page_setup.orientation = o.page_setup.orientation
     d.page_setup.fitToWidth = o.page_setup.fitToWidth
     d.page_setup.fitToHeight = 0
