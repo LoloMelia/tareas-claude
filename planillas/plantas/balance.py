@@ -60,7 +60,7 @@ MUROS = {
  "11 - Bano visitas":     [(1.30,"ext","","muro ciego"),(2.40,"int","",""),
                            (2.40,"int","",""),(1.30,"int","","")],
  "Escalera":              [(4.06,"ext","NE","PF05"),
-                           (1.73,"ext","",""),(4.06,"int","SO",""),(1.73,"int","","")],
+                           (1.73,"ext","SE",""),(4.06,"int","SO",""),(1.73,"int","NO","")],
  "13 - Dormitorio Norte": [(4.25,"ext","NO","VA04"),(4.25,"ext","SE","VA05"),
                            (4.00,"ext","","muro ciego"),(4.00,"int","","")],
  "14 - Play room":        [(4.13,"ext","NO","VA04"),(4.08,"int","NE",""),
