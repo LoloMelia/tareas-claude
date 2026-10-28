@@ -55,7 +55,7 @@ MUROS = {
                            (3.38,"int","",""),(1.66,"int","",""),
                            (1.49,"int","",""),(1.09,"int","",""),(0.57,"int","","")],
  "09 - Dormitorio suite": [(3.50,"ext","NE","PV03"),(3.50,"ext","SO","VA01"),
-                           (3.50,"ext","NO","muro ciego"),(3.50,"int","SE","")],
+                           (3.50,"ext","SE","muro ciego"),(3.50,"int","NO","")],
  "10 - Bano suite":       [(3.38,"ext","NE","VA02"),(1.72,"int","NO","bano visitas"),
                            (3.38,"int","SO",""),(1.72,"int","SE","dormitorio suite")],
  "11 - Bano visitas":     [(1.30,"ext","","muro ciego"),(2.40,"int","",""),
