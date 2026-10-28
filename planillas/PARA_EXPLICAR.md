@@ -443,9 +443,14 @@ escalera hay un solo ambiente.
 **Pared del living a la escalera.** Llega hasta la losa, sobre el baño exterior
 (12) que está bajo la escalera. Se cuenta como muro completo.
 
-**Hall: la puerta de ingreso H01.** Mide 1,50 × 3,00 y está en la planilla de
-herrería, no en la de carpintería. Se computó como abertura con factor 60. Si
-fuera una puerta ciega de chapa convendría revisar el factor.
+**Hall: la puerta de ingreso H01 — a consultar.** Mide 1,50 × 3,00, es de
+**hierro** y está en la planilla de herrería, no en la de carpintería. Se la
+computó como abertura (renglón VENTANA, factor 60), igual que si fuera
+vidriada. Es la opción conservadora, pero la puerta es opaca, y como las
+paredes se cuentan enteras, el área de la puerta ya está dentro de la pared SE
+de 2,15 × 3,00 (factor 20). **Consultar** cómo trata las puertas el método de
+la cátedra. Si no las carga como ventana, el hall pasa de 2.340 a 2.051 kcal/h
+y el living de 8.065 a 7.776 kcal/h (de 30 a 29 elementos).
 
 **Vestidor.** Es en L: el lado largo de 4,87 se separa en 1,70 exterior y 3,17
 interior (hacia el hall), y del lado opuesto hay tres tramos cortos (3,38, 0,57 y
@@ -461,9 +466,8 @@ computa.
   estructural) y la polilínea da unos 4,6 m².
 - En la lámina de fachadas la **PF05 de la escalera** figura al NE, pero el lado
   NE de la escalera quedó cargado como pared interior. Revisar.
-- Quedan **orientaciones sin completar** en la escalera (las dos de 4,06), el
-  baño de visitas, y los dormitorios Norte y Sur y el baño 17 (la pared ciega y
-  la interior de cada uno).
+- **Consultar:** si la puerta de hierro H01 se carga como abertura (factor 60) o
+  queda dentro de la pared. Hoy está cargada como vidriada.
 
 ---
 
