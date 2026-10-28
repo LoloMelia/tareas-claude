@@ -11,3 +11,7 @@
   auxiliares de carga. Se genera con:
   `python3 desvincular.py <original> <recalculado por LibreOffice> <salida>`
   y después `python3 compactar.py <salida> <final>`.
+- **Rótulos de paredes en el balance térmico**: sólo la orientación, por
+  ejemplo `AISLADAS (NO)` o `INTERIORES (NE)`. Nunca el local con el que linda
+  ni la abertura. La orientación es hacia donde mira la pared parada adentro
+  del local; aislada = exterior.

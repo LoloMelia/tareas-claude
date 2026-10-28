@@ -412,9 +412,9 @@ exterior coincide con la fachada. En una **interior**, la misma pared tiene dos
 caras, una por local, con orientaciones opuestas: la pared que el hall ve al NE
 es la que el vestidor ve al SO.
 
-**Qué lleva el rótulo de cada pared.** Aisladas: sólo la orientación, por
-ejemplo `AISLADAS (NO)`. Interiores: orientación y local con el que lindan, por
-ejemplo `INTERIORES (NE, cocina)`. No se escribe la abertura.
+**Qué lleva el rótulo de cada pared.** Sólo la orientación, tanto en las
+aisladas como en las interiores: `AISLADAS (NO)`, `INTERIORES (NE)`. No se
+escribe con qué local linda ni qué abertura tiene.
 
 **Por qué aparecen tres renglones de techo (y dos de piso).** Es el formulario de
 la cátedra, que trae impresas todas las opciones y se completa sólo la que

@@ -187,7 +187,7 @@ def agregar(wb):
                 renglon("AISLADAS (%s)"%m[2] if m[2] else "AISLADAS", 20, largo=m[0], alto=H)
             for _ in range(max(0, 2-len(ext))): renglon("AISLADAS", 20)
             for m in inte:
-                renglon("INTERIORES (%s)"%", ".join(x for x in (m[2], m[3]) if x) if (m[2] or m[3]) else "INTERIORES", 25, largo=m[0], alto=H)
+                renglon("INTERIORES (%s)"%m[2] if m[2] else "INTERIORES", 25, largo=m[0], alto=H)
             for _ in range(max(0, 2-len(inte))): renglon("INTERIORES", 25)
         else:
             for _ in range(MUROS_EXT): renglon("AISLADAS", 20)
