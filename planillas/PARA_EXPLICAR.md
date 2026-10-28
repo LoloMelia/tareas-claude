@@ -100,7 +100,7 @@ le pide ni iluminación ni ventilación natural.
 ## Dos observaciones que quedaron anotadas en la planilla
 
 - **Local 07, Hall:** la planilla original repetía los valores del local 03
-  (0,66 y 0,22). Con los 7,57 m² reales corresponden 0,84 y 0,28. Cumple igual.
+  (0,66 y 0,22). Con los 8,60 m² reales (4,00 × 2,15) corresponden 0,96 y 0,32. Cumple igual.
 - **Local 14, Estar / Playroom:** declara 5,00 m² de ventilación sobre 5,00 m²
   de superficie vidriada, o sea una carpintería 100 % abrible. En el resto de
   los locales la relación es del 50 %. Conviene verificarlo.
@@ -238,18 +238,18 @@ Cocina: 4.408,4 / 274,4 = 16,1 → 17 elementos
 | Local | Pérdida | A cubrir | Emisor |
 |---|---|---|---|
 | 01 Cocina / comedor | 4.408 | 4.408 | 17 elementos (2 radiadores) |
-| 06 Living / comedor | 5.726 | 7.650 | 28 elementos (2 radiadores) |
-| 07 Hall | 1.924 | *→ living* | — |
-| 08 Vestidor | 1.354 | 1.354 | 5 elementos |
-| Escalera | 1.388 | *→ play room* | — |
+| 06 Living / comedor | 5.726 | 8.065 | 30 elementos (2 radiadores) |
+| 07 Hall | 2.340 | *→ living* | — |
+| 08 Vestidor | 1.266 | 1.266 | 5 elementos |
+| Escalera | 1.348 | *→ play room* | — |
 | 09 Dormitorio suite | 2.238 | 2.238 | 9 elementos |
 | 10 Baño suite | 1.135 | 1.135 | toallero |
 | 11 Baño visitas | 717 | 717 | toallero |
 | 13 Dormitorio Norte | 2.965 | 2.965 | 11 elementos |
-| 14 Play room | 2.531 | 3.919 | 15 elementos |
+| 14 Play room | 2.203 | 3.552 | 13 elementos |
 | 15 Dormitorio Sur | 2.428 | 2.428 | 9 elementos |
 | 17 Baño | 904 | 904 | toallero |
-| **TOTAL** | **27.677 kcal/h** | | **95 elementos + 3 toalleros** |
+| **TOTAL** | **27.677 kcal/h** | | **94 elementos + 3 toalleros** |
 
 **27.677 kcal/h ≈ 32 kW** es el valor con el que se selecciona la caldera, que
 va en el depósito.
@@ -257,7 +257,7 @@ va en el depósito.
 ## El detalle del hall y la escalera
 
 El hall y la escalera **no tienen radiador** pero sí pierden calor: el hall
-tiene 10,56 m² de vidrio y la escalera el paño fijo PF05. Como están abiertos a
+tiene 10,65 m² de vidrio y la puerta de ingreso H01 y la escalera el paño fijo PF05. Como están abiertos a
 otros locales, el aire es el mismo, y sus pérdidas las tiene que reponer el
 radiador del local vecino.
 
@@ -403,6 +403,67 @@ final de la fila de las PV, con un rótulo y una cota pero **sin ficha**: sin
 tipo de abertura, sin ubicación, sin cantidad, sin forma de abrir. **No es una
 abertura** y no está computada. La PV04 real es una sola, de 2,06, cantidad 1,
 en el dormitorio sur. Conviene borrar ese bloque del plano.
+
+## 3.8 Balance térmico: lo que conviene poder explicar
+
+**Qué significa la orientación de una pared.** Es hacia dónde mira la pared
+parada adentro del local: el punto cardinal del lado de afuera. En una pared
+exterior coincide con la fachada. En una **interior**, la misma pared tiene dos
+caras, una por local, con orientaciones opuestas: la pared que el hall ve al NE
+es la que el vestidor ve al SO.
+
+**Qué lleva el rótulo de cada pared.** Aisladas: sólo la orientación, por
+ejemplo `AISLADAS (NO)`. Interiores: orientación y local con el que lindan, por
+ejemplo `INTERIORES (NE, cocina)`. No se escribe la abertura.
+
+**Por qué aparecen tres renglones de techo (y dos de piso).** Es el formulario de
+la cátedra, que trae impresas todas las opciones y se completa sólo la que
+corresponde. En planta baja corresponde **techo entrepiso** (factor 15, porque
+arriba hay otro local calefaccionado) y **piso sobre tierra** (10). En planta alta,
+**techo aislado** (20, cubierta con aislación) y **piso sobre local ocupado** (15).
+La misma losa de 12 cm es techo entrepiso abajo y piso sobre local ocupado
+arriba.
+
+**Paredes enteras, sin descontar aberturas.** El método de la cátedra computa
+cada pared completa y suma la abertura aparte (factor 60). Así lo hace el
+formulario modelo y así se hizo en todos los locales.
+
+**Aislada o interior.** Aislada es la que da al exterior (factor 20, paquete con
+25 mm de EPS). Interior es la que da a otro local (factor 25). El factor de la
+interior es mayor que el de la aislada porque se la supone sin aislación.
+
+**Dos locales sin radiador.** El **hall** se suma al living y la **escalera** al
+play room, porque están abiertos a ellos y el aire es el mismo. El radiador se
+dimensiona con el total, que figura en cada bloque como "CARGA TOTAL A CUBRIR".
+
+**Baranda de la escalera, play room.** Una de las paredes de 4,08 m del play room
+es una baranda, no un muro. No se cuenta como pared: entre el play room y la
+escalera hay un solo ambiente.
+
+**Pared del living a la escalera.** Llega hasta la losa, sobre el baño exterior
+(12) que está bajo la escalera. Se cuenta como muro completo.
+
+**Hall: la puerta de ingreso H01.** Mide 1,50 × 3,00 y está en la planilla de
+herrería, no en la de carpintería. Se computó como abertura con factor 60. Si
+fuera una puerta ciega de chapa convendría revisar el factor.
+
+**Vestidor.** Es en L: el lado largo de 4,87 se separa en 1,70 exterior y 3,17
+interior (hacia el hall), y del lado opuesto hay tres tramos cortos (3,38, 0,57 y
+1,49). El extremo de 1,09 **no tiene pared**: se entra sin puerta, así que no se
+computa.
+
+**Cosas para chequear antes de la defensa.**
+
+- El hall comparte con el vestidor una pared de **4,00**, pero el tramo interior
+  del vestidor que da al hall es de **3,17**. No coinciden: conviene mirar el plano.
+- Las **superficies** de los croquis no cierran del todo con las de la planilla.
+  La más dudosa es la escalera: la planilla usa 7,02 m² (del detalle
+  estructural) y la polilínea da unos 4,6 m².
+- En la lámina de fachadas la **PF05 de la escalera** figura al NE, pero el lado
+  NE de la escalera quedó cargado como pared interior. Revisar.
+- Quedan **orientaciones sin completar** en la escalera (las dos de 4,06), el
+  baño de visitas, y los dormitorios Norte y Sur y el baño 17 (la pared ciega y
+  la interior de cada uno).
 
 ---
 
