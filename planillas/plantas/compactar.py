@@ -4,8 +4,9 @@
 Se reconstruye hoja por hoja copiando solo las filas con contenido, porque
 borrar filas en el lugar descoloca las celdas combinadas y las imagenes.
 """
-import copy, sys, math, openpyxl
+import copy, io, sys, math, openpyxl
 import bordes
+from openpyxl.drawing.image import Image as XLImage
 from openpyxl.utils import get_column_letter
 
 ALTO = 19.8        # 0,7 cm en puntos
@@ -102,6 +103,23 @@ for hoja in wb.sheetnames:
             # 1 cm, salvo que el texto pida tres renglones o mas
             alto = ALTO_TITULO if alto < 45 else alto
         d.row_dimensions[fila[0].row].height = round(min(alto, TOPE), 1)
+
+    # los esquemas (imagenes sueltas sobre las celdas) se llevan a su fila nueva;
+    # la fila crece lo justo para que la imagen entre sin pisar a la vecina
+    if hoja != "Balance termico":
+        for im in o._images:
+            fila0 = im.anchor._from.row + 1
+            if fila0 not in mapa:
+                continue
+            nueva = mapa[fila0]
+            img = XLImage(io.BytesIO(im._data()))
+            img.width, img.height = im.width, im.height
+            img.anchor = "%s%d" % (get_column_letter(im.anchor._from.col + 1), nueva)
+            d.add_image(img)
+            necesario = round(im.height * 0.75 + 3, 1)
+            actual = d.row_dimensions[nueva].height or ALTO
+            if necesario > actual:
+                d.row_dimensions[nueva].height = necesario
 
     d.page_setup.orientation = o.page_setup.orientation
     d.page_setup.fitToWidth = o.page_setup.fitToWidth
