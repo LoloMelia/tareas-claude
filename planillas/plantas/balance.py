@@ -68,7 +68,7 @@ MUROS = {
  "15 - Dormitorio Sur":   [(4.05,"ext","SE","PV04"),(3.50,"ext","SO","muro ciego"),
                            (4.05,"int","NO",""),(3.50,"int","NE","")],
  "17 - Bano":             [(2.20,"ext","NE","VA03"),
-                           (1.60,"ext","",""),(2.20,"int","SO",""),(1.60,"int","","")],
+                           (1.60,"ext","SE",""),(2.20,"int","SO",""),(1.60,"int","NO","")],
 }
 PAREDES = {"08 - Vestidor": [4.87, 1.66, 3.38, 0.57, 1.49, 1.09]}
 # locales sin emisor propio: su carga la cubre el radiador del local al que se abren
