@@ -45,11 +45,11 @@ MUROS = {
  # abertura que lleva. Donde el muro es ciego, o donde la abertura entra en mas
  # de un muro del mismo local, queda sin rotular.
  "01 - Cocina / comedor": [(7.63,"ext","NO","PF03 y PV02"),(3.56,"ext","SO","PF04 y VA01"),
-                           (7.63,"int","","galeria y living"),(3.56,"int","","deposito y lavadero")],
+                           (7.63,"int","SE","galeria y living"),(3.56,"int","NE","deposito y lavadero")],
  "06 - Living / comedor": [(8.66,"ext","SE","PF02"),(4.06,"int","","cocina"),
-                           (8.66,"int","","galeria, con la PV01"),(4.06,"int","","escalera")],
+                           (8.66,"int","NO","galeria, con la PV01"),(4.06,"int","","escalera")],
  "07 - Hall / ingreso":   [(4.00,"ext","SO","PF01, patio interior"),(2.15,"ext","SE","puerta de ingreso"),
-                           (4.00,"int","","vestidor"),(2.15,"int","","living comedor")],
+                           (4.00,"int","NE","vestidor"),(2.15,"int","NO","living comedor")],
  "08 - Vestidor":          [(1.70,"ext","","tramo exterior del lado largo, ciego"),
                            (3.17,"int","","resto del lado largo"),
                            (3.38,"int","",""),(1.66,"int","",""),
@@ -57,19 +57,19 @@ MUROS = {
  "09 - Dormitorio suite": [(3.50,"ext","NE","PV03"),(3.50,"ext","SO","VA01"),
                            (3.50,"ext","","muro ciego"),(3.50,"int","","")],
  "10 - Bano suite":       [(3.38,"ext","NE","VA02"),(1.72,"int","",""),
-                           (3.38,"int","",""),(1.72,"int","","")],
+                           (3.38,"int","SO",""),(1.72,"int","","")],
  "11 - Bano visitas":     [(1.30,"ext","","muro ciego"),(2.40,"int","",""),
                            (2.40,"int","",""),(1.30,"int","","")],
- "Escalera":              [(4.06,"ext","","una de las dos lleva la PF05, al Noreste"),
-                           (1.73,"ext","",""),(4.06,"int","",""),(1.73,"int","","")],
+ "Escalera":              [(4.06,"ext","NE","PF05"),
+                           (1.73,"ext","",""),(4.06,"int","SO",""),(1.73,"int","","")],
  "13 - Dormitorio Norte": [(4.25,"ext","NO","VA04"),(4.25,"ext","SE","VA05"),
                            (4.00,"ext","","muro ciego"),(4.00,"int","","")],
  "14 - Play room":        [(4.13,"ext","NO","VA04"),(4.08,"int","",""),
-                           (4.13,"int","",""),(4.08,"int","","")],
+                           (4.13,"int","SE",""),(4.08,"int","","")],
  "15 - Dormitorio Sur":   [(4.05,"ext","SE","PV04"),(3.50,"ext","","muro ciego"),
-                           (4.05,"int","",""),(3.50,"int","","")],
- "17 - Bano":             [(2.20,"ext","","una de las dos lleva la VA03, al Noreste"),
-                           (1.60,"ext","",""),(2.20,"int","",""),(1.60,"int","","")],
+                           (4.05,"int","NO",""),(3.50,"int","","")],
+ "17 - Bano":             [(2.20,"ext","NE","VA03"),
+                           (1.60,"ext","",""),(2.20,"int","SO",""),(1.60,"int","","")],
 }
 PAREDES = {"08 - Vestidor": [4.87, 1.66, 3.38, 0.57, 1.49, 1.09]}
 # locales sin emisor propio: su carga la cubre el radiador del local al que se abren
@@ -188,7 +188,7 @@ def agregar(wb):
                 renglon("AISLADAS (%s)"%m[2] if m[2] else "AISLADAS", 20, largo=m[0], alto=H)
             for _ in range(max(0, 2-len(ext))): renglon("AISLADAS", 20)
             for m in inte:
-                renglon("INTERIORES (%s)"%m[3] if m[3] else "INTERIORES", 25, largo=m[0], alto=H)
+                renglon("INTERIORES (%s)"%", ".join(x for x in (m[2], m[3]) if x) if (m[2] or m[3]) else "INTERIORES", 25, largo=m[0], alto=H)
             for _ in range(max(0, 2-len(inte))): renglon("INTERIORES", 25)
         else:
             for _ in range(MUROS_EXT): renglon("AISLADAS", 20)
