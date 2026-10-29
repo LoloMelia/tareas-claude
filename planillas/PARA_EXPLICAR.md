@@ -467,6 +467,95 @@ computa.
 - **Consultar:** si la puerta de hierro H01 se carga como abertura (factor 60) o
   queda dentro de la pared. Hoy está cargada como vidriada.
 
+# 4. Liquidación de derechos de medianería
+
+*Hoja de consulta. La planilla está en `planillas/medianeria/Planilla medianeria.xlsx`.
+Se armó a partir de la planilla de ejemplo; los datos del caso propio se cargan a
+continuación.*
+
+## 4.1 Para qué sirve
+
+Cuando un propietario ("A") construye un muro contra el límite y el vecino ("1")
+lo aprovecha apoyando o adosando su edificio, el segundo le **reembolsa la mitad
+del valor actual del muro**. La planilla calcula ese valor: cuánto costaría
+rehacer el muro (valor de reposición), cuánto de ese valor se perdió por el paso
+del tiempo (depreciación) y cuánto le toca pagar a cada parte.
+
+## 4.2 Cómo se calcula, columna por columna
+
+| Columna | Qué es | Cómo se obtiene |
+|---|---|---|
+| Largo, alto, ancho | medidas de cada ítem del muro | se miden |
+| Cómputo métrico | cantidad de obra | largo × alto × ancho (m³); en los revoques, la superficie (m²) |
+| Coste unitario | precio del ítem sin IVA | de la lista de precios del mes |
+| IVA | 21 % del coste | coste × 0,21 |
+| Precio unitario | coste con IVA | coste + IVA |
+| Valor de reposición | cuánto cuesta hacerlo nuevo | cómputo × precio unitario |
+| Antigüedad | años del muro | dato del caso |
+| Estado del muro | conservación (1 a 5, según la tabla) | dato del caso |
+| Vida útil | años que dura ese ítem | tabla por tipo de ítem |
+| % edad / vida útil | cuánto de su vida ya gastó | antigüedad ÷ vida útil |
+| Valor residual | lo que vale al final de la vida útil | un porcentaje del valor de reposición (5 % en la mampostería de elevación) |
+| Depreciación (Ross-Heidecke) | coeficiente de la tabla | se busca por % de edad y estado |
+| Valor actual | valor de reposición ya depreciado | ver 4.4 |
+| Total a liquidar | lo que paga el vecino | la mitad del valor actual |
+
+Debajo del total van el **valor de reposición total** y los **honorarios del
+liquidador (10 % del valor de reposición)**, que se cobran aparte.
+
+## 4.3 Los ítems del muro de ejemplo
+
+Excavación de cimientos, banquina de hormigón sin armar, mampostería de
+cimientos de 45 cm, encadenado de cimientos, mampostería de cimientos de 30 cm,
+doble capa aisladora (horizontal y vertical), mampostería de elevación, revoque
+exterior y revoque interior. La excavación no se deprecia (queda enterrada y no
+envejece): su valor actual es igual al de reposición.
+
+Dos cómputos especiales: la **doble capa aisladora** se mide como
+largo × 2 × (alto + ancho), y los **revoques** se miden por superficie, no por
+volumen.
+
+## 4.4 Un punto a consultar: la fórmula del valor actual
+
+En la planilla de ejemplo el valor actual da **más de 12 veces el valor de
+reposición** (por ejemplo la banquina: $ 82.664 de reposición y $ 1.036.610 de
+valor actual), y el total a liquidar ($ 11,8 millones) es 8,5 veces el valor de
+reposición total ($ 1,39 millones). Es imposible: un muro usado no puede valer
+más que uno nuevo. El ejemplo parece multiplicar por (coeficiente − 1) cuando
+debería multiplicar por (1 − coeficiente / 100).
+
+La forma habitual es:
+
+```
+Valor actual = (Valor de reposición − Valor residual) × (1 − Coef. Ross-Heidecke / 100) + Valor residual
+```
+
+La planilla quedó, por ahora, **igual que el ejemplo** para poder compararla.
+**Consultar con la cátedra** cuál es la fórmula correcta antes de cargar los datos
+propios y corregirla en la columna "Valor actual".
+
+## 4.5 Datos que hay que reunir para el caso propio
+
+- Largo, alto y espesor del muro medianero, y de cada ítem (cimientos,
+  encadenado, capa aisladora, elevación).
+- Materiales de cada ítem y su espesor.
+- Precios actualizados al mes que se liquida (coste sin IVA).
+- Antigüedad del muro y estado de conservación.
+- Vida útil de cada ítem y coeficiente de Ross-Heidecke (de la tabla de la
+  cátedra).
+- Quiénes son las partes ("A" y "1"), la fecha y la ciudad, para el texto del pie.
+
+## 4.6 Formato de las planillas
+
+Lo que se viene aplicando en todas las planillas, para no olvidarlo:
+
+- **Tipografía:** Bahnschrift Light Condensed, tamaño 12.
+- **Títulos** (filas con relleno gris): 1 cm de alto. Resto de las filas: 0,7 cm.
+- **Líneas:** perímetro y títulos en línea llena; el resto de las líneas
+  interiores, en línea de puntos.
+- **Espacio** en blanco entre una planilla y la siguiente.
+- Versión para AutoCAD: sin fórmulas (valores fijos).
+
 ---
 
 # Resumen de verificaciones

@@ -1,6 +1,8 @@
 
 ## Convenciones de las planillas (pedidas por el autor)
 
+- **Tipografía**: Bahnschrift Light Condensed, tamaño 12, en todas las planillas.
+
 - **Bordes**: el perímetro de cada tabla va en línea llena; las líneas
   interiores, en línea de puntos, salvo las que tocan un encabezado, que van
   llenas. Implementado en `planillas/plantas/bordes.py`.
@@ -19,3 +21,11 @@
   ejemplo `AISLADAS (NO)` o `INTERIORES (NE)`. Nunca el local con el que linda
   ni la abertura. La orientación es hacia donde mira la pared parada adentro
   del local; aislada = exterior.
+
+## Medianería
+
+- Planilla en `planillas/medianeria/` (`medianeria.py` la genera). Está igual que
+  el ejemplo de la captura; la fórmula de "Valor actual" del ejemplo da más que el
+  valor de reposición y está pendiente de consulta (ver sección 4 de
+  `planillas/PARA_EXPLICAR.md`). Las notas de consulta de este tema van en ese
+  documento y en su versión Word.

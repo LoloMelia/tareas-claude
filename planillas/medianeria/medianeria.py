@@ -11,7 +11,7 @@ import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 import bordes
 
-FUENTE = "Arial"
+FUENTE = "Bahnschrift Light Condensed"
 GRIS = PatternFill("solid", fgColor="D9D9D9")
 C = Alignment(horizontal="center", vertical="center", wrap_text=True)
 L = Alignment(horizontal="left", vertical="center", wrap_text=True)
