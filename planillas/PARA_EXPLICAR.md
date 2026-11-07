@@ -565,12 +565,12 @@ Las partes son el Sr. "A" (propietaria) y el Sr. "1" (vecino imaginario).
 
 Hipótesis adoptadas en la hoja "Medianeria (simulacro)":
 
-- **Muro de 16,25 m de largo × 2,50 m de alto × 0,20 m de espesor**, de ladrillo
+- **Muro de 16,25 m de largo × 3,00 m de alto × 0,20 m de espesor**, de ladrillo
   Brimax 20 × 60 × 5, como el resto de la casa. El largo se mide desde la línea
   municipal hasta el eje con el otro terreno (la línea de edificación está 5 m
   más atrás).
-- **Qué se liquida:** el muro tal como existe (2,50 m), no el edificio del
-  vecino. La parte que el vecino levanta sobre esos 2,50 m (hasta sus 5,80 m) la
+- **Qué se liquida:** el muro tal como existe (3,00 m), no el edificio del
+  vecino. La parte que el vecino levanta sobre esos 3,00 m (hasta sus 5,80 m) la
   construye él y no entra en la liquidación.
 - **Cimiento: zapata corrida**, que es lo que corresponde a un muro de patio. Se
   usan los **ítems y precios del ejemplo** (diciembre 2022), cambiando sólo las
@@ -600,11 +600,12 @@ con el texto oficial y con la cátedra):
   publicada. El reglamento interno del barrio puede fijar alturas propias.
 
 Como el lote es de un barrio privado y se calcula con criterio de Rosario, la
-referencia segura es **3,00 m**. El simulacro está hecho con 2,50 m, por debajo de
-ese mínimo: conviene cambiarlo a 3,00 m salvo que la cátedra indique otra cosa.
+referencia segura es **3,00 m**, y así quedó el simulacro. Es también la altura
+hasta la cual el muro es medianero (art. 2009). Si la cátedra o el reglamento del
+barrio indican otra altura, se cambia en la hoja.
 
 **Para consultar con la cátedra:** si un muro de patio sobre el límite se liquida
-como medianero, y qué altura se adopta.
+como medianero, y qué altura se adopta (3,00 m en el simulacro).
 
 Hay un esquema (planta y corte) en `planillas/medianeria/esquema_medianera.png`.
 

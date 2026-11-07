@@ -49,8 +49,8 @@ EJEMPLO = [
  ("Revoque interior  (J+E)",              49.0, None, None, "=B{r}", 3194.01, 17, 2, 60, False, 19.99),
 ]
 
-# Simulacro: muro medianero del patio, lado SO, de 16,25 m x 2,50 m, ladrillo Brimax de 20 cm.
-LARGO, ALTO_M, ESP = 16.25, 2.50, 0.20
+# Simulacro: muro medianero del patio, lado SO, de 16,25 m x 3,00 m, ladrillo Brimax de 20 cm.
+LARGO, ALTO_M, ESP = 16.25, 3.00, 0.20
 SIMULACRO = [
  ("Excavación de cimientos",              LARGO, 1.2, 0.45, "=B{r}*C{r}*D{r}", 4207.13, 17, None, None, False, None),
  ("Banquina de hormigón sin armar",       LARGO, 0.3, 0.45, "=B{r}*C{r}*D{r}", 51585.77, 17, 2, 90, False, 13.54),
@@ -214,7 +214,7 @@ def apocope(t):
     return t
 monto = "%s pesos con %s centavos" % (apocope(palabras(entero)), apocope(palabras(cent)) if cent else "cero")
 construir(ws1, SIMULACRO, "PRECIOS MES DE DICIEMBRE 2022 (del ejemplo)", True, {
-    "leyenda": "SIMULACRO: muro medianero del patio (lado SO), 16,25 m x 2,50 m, ladrillo Brimax 20 cm, zapata corrida. Lote exento, sin medianera real.",
+    "leyenda": "SIMULACRO: muro medianero del patio (lado SO), 16,25 m x 3,00 m, ladrillo Brimax 20 cm, zapata corrida. Lote exento, sin medianera real.",
     "textos": [
      'Por lo tanto el Sr. "A" abonará al Sr. "1" la mitad del valor actual del muro depreciado según lo indicado en la Planilla superior, o sea la suma de '
      + monto + ", para lo cual se extiende el siguiente recibo de pago.",
