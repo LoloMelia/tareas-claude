@@ -589,7 +589,7 @@ con el texto oficial y con la cátedra):
 
 - **Código Civil y Comercial, arts. 2007 a 2009** (norma nacional): en un núcleo
   urbano hay un derecho y una obligación recíprocos de levantar un muro lindero de
-  cerramiento. El **muro de cerramiento forzoso debe ser estable, aislante y de
+  cerramiento. El muro de cerramiento forzoso debe ser estable, aislante y de
   **altura no menor a 3 metros** (art. 2008), medida que rige en subsidio de las
   reglamentaciones locales. El muro hecho así es **medianero hasta los 3 metros**
   (art. 2009).
