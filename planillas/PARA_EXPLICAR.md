@@ -584,9 +584,27 @@ Hipótesis adoptadas en la hoja "Medianeria (simulacro)":
 - La fecha del pie queda en blanco para completar. El monto en letras se escribió
   a mano: si cambian los números, hay que actualizarlo.
 
+**Qué dice la norma sobre la altura del muro** (búsqueda en internet, a verificar
+con el texto oficial y con la cátedra):
+
+- **Código Civil y Comercial, arts. 2007 a 2009** (norma nacional): en un núcleo
+  urbano hay un derecho y una obligación recíprocos de levantar un muro lindero de
+  cerramiento. El **muro de cerramiento forzoso debe ser estable, aislante y de
+  **altura no menor a 3 metros** (art. 2008), medida que rige en subsidio de las
+  reglamentaciones locales. El muro hecho así es **medianero hasta los 3 metros**
+  (art. 2009).
+- **Reglamento de Edificación de Rosario:** no se encontró en la búsqueda una
+  disposición específica sobre la altura de muros divisorios o de patio. Hay que
+  consultar el texto vigente en rosario.gob.ar, o a Obras Particulares.
+- **Funes y el reglamento del barrio privado:** tampoco se encontró normativa
+  publicada. El reglamento interno del barrio puede fijar alturas propias.
+
+Como el lote es de un barrio privado y se calcula con criterio de Rosario, la
+referencia segura es **3,00 m**. El simulacro está hecho con 2,50 m, por debajo de
+ese mínimo: conviene cambiarlo a 3,00 m salvo que la cátedra indique otra cosa.
+
 **Para consultar con la cátedra:** si un muro de patio sobre el límite se liquida
-como medianero, y qué altura mínima se exige para un muro medianero (acá se
-adoptó 2,50 m). También el reglamento del barrio puede fijar la altura.
+como medianero, y qué altura se adopta.
 
 Hay un esquema (planta y corte) en `planillas/medianeria/esquema_medianera.png`.
 
