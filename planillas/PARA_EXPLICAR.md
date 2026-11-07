@@ -559,25 +559,34 @@ Lo que se viene aplicando en todas las planillas, para no olvidarlo:
 ## 4.7 El simulacro del TP
 
 El lote es **exento** (barrio privado) y no tiene medianeras, así que para poder
-hacer el cálculo se simuló una: la **pared SO de la cocina** (3,56 m, donde están
-la PF04 y la VA01) se toma como medianera **ciega** y se supone un vecino "1" que
-construye pegado a ella. Las partes son el Sr. "A" (propietaria) y el Sr. "1"
-(vecino imaginario).
+hacer el cálculo se simuló una: el **muro del patio sobre el lado SO**, que se toma
+como muro medianero, y un vecino "1" que construye pegado a él (dos pisos, 5,80 m).
+Las partes son el Sr. "A" (propietaria) y el Sr. "1" (vecino imaginario).
 
 Hipótesis adoptadas en la hoja "Medianeria (simulacro)":
 
-- Muro de 3,56 m de largo × 3,00 m de alto × 0,20 m de espesor (ladrillo
-  Brimax 20 × 60 × 5, como el resto de la casa).
-- **Ítems y precios del ejemplo** (diciembre 2022), cambiando sólo las medidas:
-  el lote tiene pilotes y vigas de fundación, no cimientos corridos, pero se
-  conservaron los ítems del ejemplo porque los precios que se tienen son los suyos.
+- **Muro de 16,25 m de largo × 2,50 m de alto × 0,20 m de espesor**, de ladrillo
+  Brimax 20 × 60 × 5, como el resto de la casa. El largo se mide desde la línea
+  municipal hasta el eje con el otro terreno (la línea de edificación está 5 m
+  más atrás).
+- **Qué se liquida:** el muro tal como existe (2,50 m), no el edificio del
+  vecino. La parte que el vecino levanta sobre esos 2,50 m (hasta sus 5,80 m) la
+  construye él y no entra en la liquidación.
+- **Cimiento: zapata corrida**, que es lo que corresponde a un muro de patio. Se
+  usan los **ítems y precios del ejemplo** (diciembre 2022), cambiando sólo las
+  medidas. No se usan los pilotes ni las vigas de fundación de la casa, porque
+  pertenecen a la construcción y no a este muro.
 - **Antigüedad 17 años y estado 2**, como el ejemplo, para poder usar los mismos
   coeficientes de Ross-Heidecke. Si se cambia la antigüedad hay que buscar los
   coeficientes de nuevo en la tabla de la cátedra.
 - **Valor actual con la fórmula corregida** (ver 4.4). La hoja "Ejemplo (captura)"
   conserva la planilla original, con la fórmula del ejemplo, sólo para comparar.
-- Los datos del pie (fecha) quedan en blanco para completar. El monto en letras se
-  escribió a mano: si cambian los números, hay que actualizarlo.
+- La fecha del pie queda en blanco para completar. El monto en letras se escribió
+  a mano: si cambian los números, hay que actualizarlo.
+
+**Para consultar con la cátedra:** si un muro de patio sobre el límite se liquida
+como medianero, y qué altura mínima se exige para un muro medianero (acá se
+adoptó 2,50 m). También el reglamento del barrio puede fijar la altura.
 
 Hay un esquema (planta y corte) en `planillas/medianeria/esquema_medianera.png`.
 

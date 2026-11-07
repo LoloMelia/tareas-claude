@@ -4,7 +4,7 @@
 Genera un libro con dos hojas:
   - "Ejemplo (captura)": la planilla de ejemplo tal cual esta en la captura,
     con la formula del valor actual del ejemplo (da mas que el valor de reposicion).
-  - "Medianeria (simulacro)": el simulacro sobre la pared SO de la cocina, con
+  - "Medianeria (simulacro)": el simulacro sobre el muro medianero del patio, con
     la formula de Ross-Heidecke corregida.
 
 Las columnas calculadas llevan formulas; las de entrada son valores.
@@ -49,8 +49,8 @@ EJEMPLO = [
  ("Revoque interior  (J+E)",              49.0, None, None, "=B{r}", 3194.01, 17, 2, 60, False, 19.99),
 ]
 
-# Simulacro: pared SO de la cocina (PF04 y VA01), tomada como medianera ciega.
-LARGO, ALTO_M, ESP = 3.56, 3.00, 0.20
+# Simulacro: muro medianero del patio, lado SO, de 16,25 m x 2,50 m, ladrillo Brimax de 20 cm.
+LARGO, ALTO_M, ESP = 16.25, 2.50, 0.20
 SIMULACRO = [
  ("Excavación de cimientos",              LARGO, 1.2, 0.45, "=B{r}*C{r}*D{r}", 4207.13, 17, None, None, False, None),
  ("Banquina de hormigón sin armar",       LARGO, 0.3, 0.45, "=B{r}*C{r}*D{r}", 51585.77, 17, 2, 90, False, 13.54),
@@ -214,7 +214,7 @@ def apocope(t):
     return t
 monto = "%s pesos con %s centavos" % (apocope(palabras(entero)), apocope(palabras(cent)) if cent else "cero")
 construir(ws1, SIMULACRO, "PRECIOS MES DE DICIEMBRE 2022 (del ejemplo)", True, {
-    "leyenda": "SIMULACRO: pared SO de la cocina (PF04 y VA01) tomada como medianera. Lote exento, sin medianera real.",
+    "leyenda": "SIMULACRO: muro medianero del patio (lado SO), 16,25 m x 2,50 m, ladrillo Brimax 20 cm, zapata corrida. Lote exento, sin medianera real.",
     "textos": [
      'Por lo tanto el Sr. "A" abonará al Sr. "1" la mitad del valor actual del muro depreciado según lo indicado en la Planilla superior, o sea la suma de '
      + monto + ", para lo cual se extiende el siguiente recibo de pago.",
