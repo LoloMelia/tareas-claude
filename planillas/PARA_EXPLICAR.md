@@ -556,6 +556,31 @@ Lo que se viene aplicando en todas las planillas, para no olvidarlo:
 - **Espacio** en blanco entre una planilla y la siguiente.
 - Versión para AutoCAD: sin fórmulas (valores fijos).
 
+## 4.7 El simulacro del TP
+
+El lote es **exento** (barrio privado) y no tiene medianeras, así que para poder
+hacer el cálculo se simuló una: la **pared SO de la cocina** (3,56 m, donde están
+la PF04 y la VA01) se toma como medianera **ciega** y se supone un vecino "1" que
+construye pegado a ella. Las partes son el Sr. "A" (propietaria) y el Sr. "1"
+(vecino imaginario).
+
+Hipótesis adoptadas en la hoja "Medianeria (simulacro)":
+
+- Muro de 3,56 m de largo × 3,00 m de alto × 0,20 m de espesor (ladrillo
+  Brimax 20 × 60 × 5, como el resto de la casa).
+- **Ítems y precios del ejemplo** (diciembre 2022), cambiando sólo las medidas:
+  el lote tiene pilotes y vigas de fundación, no cimientos corridos, pero se
+  conservaron los ítems del ejemplo porque los precios que se tienen son los suyos.
+- **Antigüedad 17 años y estado 2**, como el ejemplo, para poder usar los mismos
+  coeficientes de Ross-Heidecke. Si se cambia la antigüedad hay que buscar los
+  coeficientes de nuevo en la tabla de la cátedra.
+- **Valor actual con la fórmula corregida** (ver 4.4). La hoja "Ejemplo (captura)"
+  conserva la planilla original, con la fórmula del ejemplo, sólo para comparar.
+- Los datos del pie (fecha) quedan en blanco para completar. El monto en letras se
+  escribió a mano: si cambian los números, hay que actualizarlo.
+
+Hay un esquema (planta y corte) en `planillas/medianeria/esquema_medianera.png`.
+
 ---
 
 # Resumen de verificaciones
