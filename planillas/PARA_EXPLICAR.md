@@ -626,6 +626,49 @@ Para ajustarla a la cátedra hace falta:
 4. Los datos de la **carátula** (profesional, matrícula, comitente, obra y
    ubicación) y del **convenio**.
 
+## 4.8 La tabla de Ross-Heidecke
+
+Es el anexo de la planilla del CAPSF (hoja "7-anexo"), "para depreciación de
+edificios". Da un **coeficiente de depreciación, en %**, que se busca así:
+
+- **Fila:** la **edad en % de la duración** (vida probable), de 0 a 100. Es la
+  antigüedad dividida por la vida útil del rubro, por 100 (se redondea al entero).
+- **Columna:** el **estado de conservación**, de 1 a 5, con valores intermedios:
+  1 nuevo o muy bueno · 2 conservación normal · 3 necesita reparaciones sencillas ·
+  4 necesita reparaciones importantes · 5 estado de demolición.
+- **La celda** donde se cruzan es el coeficiente de la tabla (KT), en %. Se divide
+  por 100 para obtener el coeficiente de depreciación (KD).
+
+**Vida útil que propone el CAPSF** (instructivo de la planilla):
+
+| Rubro | Vida útil |
+|---|---|
+| Mampostería | 90 años |
+| Revoques interiores | 60 años |
+| Capas aisladoras horizontales | 50 años |
+| Capas aisladoras verticales, azotados hidrófugos y revoques exteriores | 40 años |
+
+(La presentación de la clase usó 40 años para la capa horizontal y 50 para la
+vertical, al revés que el instructivo. Conviene consultar cuál se usa.)
+
+**Ejemplo de lectura, con los datos de la clase** (antigüedad 13 años, estado 2,5):
+
+| Rubro | Vida útil | Edad % | Coeficiente de la tabla |
+|---|---|---|---|
+| Mampostería y cimientos | 90 | 14 | 15,42 |
+| Revoque exterior (y capa de 40 años) | 40 | 33 | 28,26 |
+| Capa de 50 años | 50 | 26 | 23,14 |
+| Revoque interior | 60 | 22 | 20,42 |
+
+La depreciación de cada rubro es **(precio − valor residual) × coeficiente / 100**, y
+el valor del rubro es **precio − depreciación**.
+
+La tabla completa, tal como está en la planilla:
+
+![Tabla de Ross-Heidecke, edad de 0 a 47 %](medianeria/ross_heidecke_0-47.png)
+
+![Tabla de Ross-Heidecke, edad de 48 a 100 %](medianeria/ross_heidecke_48-100.png)
+
 ---
 
 # Resumen de verificaciones
