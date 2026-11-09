@@ -469,145 +469,162 @@ computa.
 
 # 4. Liquidación de derechos de medianería
 
-*Hoja de consulta. La planilla está en `planillas/medianeria/Planilla medianeria.xlsx`.
-Se armó a partir de la planilla de ejemplo; los datos del caso propio se cargan a
-continuación.*
+*Esta sección sigue el método de la cátedra (clase "Liquidación de medianería",
+Producción Edilicia 1, cátedra Espinosa, docente Sacchi), que justiprecia el muro
+con la **norma IRAM 34.869**: se tiene en cuenta la depreciación de cada
+componente del muro según su antigüedad y su estado.*
 
 ## 4.1 Para qué sirve
 
-Cuando un propietario ("A") construye un muro contra el límite y el vecino ("1")
-lo aprovecha apoyando o adosando su edificio, el segundo le **reembolsa la mitad
-del valor actual del muro**. La planilla calcula ese valor: cuánto costaría
-rehacer el muro (valor de reposición), cuánto de ese valor se perdió por el paso
-del tiempo (depreciación) y cuánto le toca pagar a cada parte.
+Un propietario ("A") construye un muro sobre el límite y el vecino ("B") lo
+aprovecha. El que lo usa le **compra la parte de muro que le corresponde**: la
+parte **en condominio**, es decir la que sirve a los dos. La liquidación calcula
+cuánto vale esa parte, ya depreciada, y la **mitad** la paga el vecino.
 
-## 4.2 Cómo se calcula, columna por columna
+Dos ideas clave del método:
 
-| Columna | Qué es | Cómo se obtiene |
-|---|---|---|
-| Largo, alto, ancho | medidas de cada ítem del muro | se miden |
-| Cómputo métrico | cantidad de obra | largo × alto × ancho (m³); en los revoques, la superficie (m²) |
-| Coste unitario | precio del ítem sin IVA | de la lista de precios del mes |
-| IVA | 21 % del coste | coste × 0,21 |
-| Precio unitario | coste con IVA | coste + IVA |
-| Valor de reposición | cuánto cuesta hacerlo nuevo | cómputo × precio unitario |
-| Antigüedad | años del muro | dato del caso |
-| Estado del muro | conservación (1 a 5, según la tabla) | dato del caso |
-| Vida útil | años que dura ese ítem | tabla por tipo de ítem |
-| % edad / vida útil | cuánto de su vida ya gastó | antigüedad ÷ vida útil |
-| Valor residual | lo que vale al final de la vida útil | un porcentaje del valor de reposición (5 % en la mampostería de elevación) |
-| Depreciación (Ross-Heidecke) | coeficiente de la tabla | se busca por % de edad y estado |
-| Valor actual | valor de reposición ya depreciado | ver 4.4 |
-| Total a liquidar | lo que paga el vecino | la mitad del valor actual |
+- Se liquida **sólo lo que es común** a los dos muros. Lo que es propiedad exclusiva
+  de A o de B no se cobra.
+- Cada componente del muro (cimiento, mampostería, capa aisladora, revoque) se
+  **deprecia por separado**, porque cada uno tiene una vida útil distinta.
 
-Debajo del total van el **valor de reposición total** y los **honorarios del
-liquidador (10 % del valor de reposición)**, que se cobran aparte.
+## 4.2 El método en cinco pasos
 
-## 4.3 Los ítems del muro de ejemplo
+1. **Redibujar el perfil del muro existente**, el construido por el Sr. "A", con
+   sus largos, alturas, espesor y cimiento (vista, corte y planta, con el nivel
+   ±0,00).
+2. **Generar el perfil del Sr. "B"**, el muro que el vecino tiene o construye, con
+   las mismas referencias.
+3. **Superponer los perfiles** e identificar las **áreas comunes** (en condominio)
+   y las **exclusivas** de cada uno. Se referencian con tramas distintas.
+4. **Designar el perfil común**, con letras en los vértices (A, B, C, D, E, F, G, A',
+   G'), para dividirlo en sectores con los que se hacen las tablas.
+5. **Completar la planilla** "Informe modelo medianería", la número 13 del Colegio
+   de Arquitectos de la Provincia de Santa Fe (CAPSF), que se descarga de
+   capsf.ar/computo-y-presupuesto y tiene varias pestañas.
 
-Excavación de cimientos, banquina de hormigón sin armar, mampostería de
-cimientos de 45 cm, encadenado de cimientos, mampostería de cimientos de 30 cm,
-doble capa aisladora (horizontal y vertical), mampostería de elevación, revoque
-exterior y revoque interior. La excavación no se deprecia (queda enterrada y no
-envejece): su valor actual es igual al de reposición.
+## 4.3 Las pestañas de la planilla
 
-Dos cómputos especiales: la **doble capa aisladora** se mide como
-largo × 2 × (alto + ancho), y los **revoques** se miden por superficie, no por
-volumen.
+| Pestaña | Qué lleva |
+|---|---|
+| Carátula | profesional, matrícula, comitente, obra y ubicación |
+| Croquis | ubicación, planta y elevación del muro, con el perfil común |
+| Cómputo | cantidades de obra, por sector |
+| Presupuesto | precios unitarios (del CAPSF) y precio teórico |
+| Valor de reposición | depreciación de cada rubro (Ross-Heidecke) y total |
+| Convenio | boleto de compraventa del muro medianero |
+| Anexo | tabla de Ross-Heidecke |
 
-## 4.4 Un punto a consultar: la fórmula del valor actual
+## 4.4 Cómo se calcula
 
-En la planilla de ejemplo el valor actual da **más de 12 veces el valor de
-reposición** (por ejemplo la banquina: $ 82.664 de reposición y $ 1.036.610 de
-valor actual), y el total a liquidar ($ 11,8 millones) es 8,5 veces el valor de
-reposición total ($ 1,39 millones). Es imposible: un muro usado no puede valer
-más que uno nuevo. El ejemplo parece multiplicar por (coeficiente − 1) cuando
-debería multiplicar por (1 − coeficiente / 100).
+**a) Cómputo métrico.** Se mide cada rubro por sector del perfil común: largo,
+ancho y altura, y se obtiene la cantidad (m³ o m²). Los rubros son:
 
-La forma habitual es:
+| Rubro | Cómo se mide |
+|---|---|
+| Movimiento de tierra: excavación de cimientos | largo × ancho × profundidad (m³) |
+| Cimentación: zapata corrida de hormigón de cascotes | largo × ancho × alto (m³) |
+| Cimentación: mampostería de fundación | largo × ancho × alto (m³) |
+| Mampostería de elevación | largo × espesor × altura, por sector (m³) |
+| Capas aisladoras, horizontal | 2 capas × largo × espesor del muro (m²) |
+| Capas aisladoras, vertical | 2 capas × largo × altura de la capa (m²) |
+| Revoque interior (grueso + fino) y exterior (azotado + grueso + fino) | largo × altura, por sector (m²) |
+
+**b) Presupuesto.** Cada cantidad se multiplica por el **precio unitario del CAPSF**
+(de la fecha que indica la planilla). La suma es el **costo neto**. Al costo neto
+se le aplica un coeficiente que reúne gastos generales, beneficio e IVA:
 
 ```
-Valor actual = (Valor de reposición − Valor residual) × (1 − Coef. Ross-Heidecke / 100) + Valor residual
+K = (1 + 10 % de gastos generales + 10 % de beneficio) × 1,21 de IVA = 1,452
+Precio teórico = costo neto × K
 ```
 
-La planilla quedó, por ahora, **igual que el ejemplo** para poder compararla.
-**Consultar con la cátedra** cuál es la fórmula correcta antes de cargar los datos
-propios y corregirla en la columna "Valor actual".
+**c) Valor de reposición con depreciación (Ross-Heidecke).** Para cada rubro se
+ingresan:
 
-## 4.5 Datos que hay que reunir para el caso propio
+| Dato | Qué es |
+|---|---|
+| % de valor residual | lo que vale el rubro al final de su vida útil (0 en casi todos; 5 % en la mampostería de elevación del ejemplo) |
+| Antigüedad | años del muro |
+| Estado | estado de conservación (el ejemplo usa 2,5) |
+| % de edad | antigüedad ÷ vida útil del rubro |
+| Coeficiente de la tabla | el de Ross-Heidecke, según el % de edad y el estado (anexo de la planilla) |
 
-- Largo, alto y espesor del muro medianero, y de cada ítem (cimientos,
-  encadenado, capa aisladora, elevación).
-- Materiales de cada ítem y su espesor.
-- Precios actualizados al mes que se liquida (coste sin IVA).
-- Antigüedad del muro y estado de conservación.
-- Vida útil de cada ítem y coeficiente de Ross-Heidecke (de la tabla de la
-  cátedra).
-- Quiénes son las partes ("A" y "1"), la fecha y la ciudad, para el texto del pie.
+Con eso la planilla calcula:
 
-## 4.6 Formato de las planillas
+```
+Depreciación = precio × (1 − % residual) × coeficiente de la tabla
+Valor del rubro = precio − depreciación
+Total del muro con depreciación = suma de los valores
+TOTAL DE REPOSICIÓN (a pagar) = 50 % del total del muro con depreciación
+```
 
-Lo que se viene aplicando en todas las planillas, para no olvidarlo:
+El 50 % es la parte que le corresponde al condómino. El movimiento de tierra no se
+deprecia (coeficiente 0).
 
-- **Tipografía:** Bahnschrift Light Condensed, tamaño 12.
-- **Títulos** (filas con relleno gris): 1 cm de alto. Resto de las filas: 0,7 cm.
-- **Líneas:** perímetro y títulos en línea llena; el resto de las líneas
-  interiores, en línea de puntos.
-- **Espacio** en blanco entre una planilla y la siguiente.
-- Versión para AutoCAD: sin fórmulas (valores fijos).
+## 4.5 Ejemplo de la cátedra, con sus números
 
-## 4.7 El simulacro del TP
+Muro de 15 m en condominio, con una parte de 3,00 m de alto y otra de 6 m que
+sube a 4,00 m:
 
-El lote es **exento** (barrio privado) y no tiene medianeras, así que para poder
-hacer el cálculo se simuló una: el **muro del patio sobre el lado SO**, que se toma
-como muro medianero, y un vecino "1" que construye pegado a él (dos pisos, 5,80 m).
-Las partes son el Sr. "A" (propietaria) y el Sr. "1" (vecino imaginario).
+| Rubro | Cantidad |
+|---|---|
+| Excavación (15 × 0,45 × 1,00) | 6,75 m³ |
+| Zapata corrida (15 × 0,45 × 0,30) | 2,03 m³ |
+| Mampostería de fundación (2,03 + 1,80) | 3,83 m³ |
+| Mampostería de elevación (13,50 + 7,20) | 20,70 m³ |
+| Capa aisladora horizontal / vertical | 9,00 / 6,00 m² |
+| Revoque interior y exterior (45 + 24) | 69,00 m² cada uno |
 
-Hipótesis adoptadas en la hoja "Medianeria (simulacro)":
+Costo neto $ 9.794.693,75 × K 1,452 = precio teórico **$ 14.221.895,33**. Con
+antigüedad de 13 años y estado 2,5, el total del muro con depreciación es
+$ 11.695.077,35 y el **total de reposición (50 %) es $ 5.847.538,68**.
 
-- **Muro de 16,25 m de largo × 3,00 m de alto × 0,20 m de espesor**, de ladrillo
-  Brimax 20 × 60 × 5, como el resto de la casa. El largo se mide desde la línea
-  municipal hasta el eje con el otro terreno (la línea de edificación está 5 m
-  más atrás).
-- **Qué se liquida:** el muro tal como existe (3,00 m), no el edificio del
-  vecino. La parte que el vecino levanta sobre esos 3,00 m (hasta sus 5,80 m) la
-  construye él y no entra en la liquidación.
-- **Cimiento: zapata corrida**, que es lo que corresponde a un muro de patio. Se
-  usan los **ítems y precios del ejemplo** (diciembre 2022), cambiando sólo las
-  medidas. No se usan los pilotes ni las vigas de fundación de la casa, porque
-  pertenecen a la construcción y no a este muro.
-- **Antigüedad 17 años y estado 2**, como el ejemplo, para poder usar los mismos
-  coeficientes de Ross-Heidecke. Si se cambia la antigüedad hay que buscar los
-  coeficientes de nuevo en la tabla de la cátedra.
-- **Valor actual con la fórmula corregida** (ver 4.4). La hoja "Ejemplo (captura)"
-  conserva la planilla original, con la fórmula del ejemplo, sólo para comparar.
-- La fecha del pie queda en blanco para completar. El monto en letras se escribió
-  a mano: si cambian los números, hay que actualizarlo.
+Se ve cómo funciona la depreciación: la mampostería tiene 14 % de edad y coeficiente
+15,42 %; las capas aisladoras y los revoques, que duran menos, llegan a 26 o 33 % de
+edad y coeficientes de 23 a 28 %.
 
-**Qué dice la norma sobre la altura del muro** (búsqueda en internet, a verificar
-con el texto oficial y con la cátedra):
+## 4.6 El simulacro del TP
 
-- **Código Civil y Comercial, arts. 2007 a 2009** (norma nacional): en un núcleo
-  urbano hay un derecho y una obligación recíprocos de levantar un muro lindero de
-  cerramiento. El muro de cerramiento forzoso debe ser estable, aislante y de
-  **altura no menor a 3 metros** (art. 2008), medida que rige en subsidio de las
-  reglamentaciones locales. El muro hecho así es **medianero hasta los 3 metros**
-  (art. 2009).
-- **Reglamento de Edificación de Rosario:** no se encontró en la búsqueda una
-  disposición específica sobre la altura de muros divisorios o de patio. Hay que
-  consultar el texto vigente en rosario.gob.ar, o a Obras Particulares.
-- **Funes y el reglamento del barrio privado:** tampoco se encontró normativa
-  publicada. El reglamento interno del barrio puede fijar alturas propias.
+El lote es **exento** (barrio privado) y no tiene medianeras, así que se simuló una:
+el **muro del patio sobre el lado SO**, con un vecino "1" que construye pegado a él.
+Siguiendo el método de la cátedra:
 
-Como el lote es de un barrio privado y se calcula con criterio de Rosario, la
-referencia segura es **3,00 m**, y así quedó el simulacro. Es también la altura
-hasta la cual el muro es medianero (art. 2009). Si la cátedra o el reglamento del
-barrio indican otra altura, se cambia en la hoja.
+- **Perfil del Sr. "A"** (muro existente): 16,25 m de largo (de la línea municipal al
+  eje con el otro terreno; la línea de edificación está 5 m más atrás) × 3,00 m de
+  alto × 0,20 m de espesor, ladrillo Brimax 20 × 60 × 5, sobre zapata corrida.
+- **Perfil del Sr. "B"** (vecino): construye pegado, con 2 pisos y 5,80 m de alto.
+- **Perfil común:** lo que se superpone es el muro de A hasta los **3,00 m**. Lo que
+  el vecino levanta sobre los 3,00 m es exclusivo suyo y **no entra**.
+- **Altura de 3,00 m:** es el mínimo del Código Civil y Comercial para un muro de
+  cerramiento (art. 2008), y hasta esa altura el muro es medianero (art. 2009). No se
+  encontró un reglamento de Rosario ni de Funes que diga otra cosa; hay que
+  consultarlo, y también el reglamento del barrio.
 
-**Para consultar con la cátedra:** si un muro de patio sobre el límite se liquida
-como medianero, y qué altura se adopta (3,00 m en el simulacro).
+## 4.7 Qué hay hecho y qué falta
 
-Hay un esquema (planta y corte) en `planillas/medianeria/esquema_medianera.png`.
+La planilla que se armó (`planillas/medianeria/Planilla medianeria.xlsx`) tiene otro
+formato: sigue una planilla de ejemplo de 2022, con otros rubros y con precios de
+diciembre de 2022. **No es la planilla de la cátedra.** Las diferencias:
+
+- La cátedra usa la **planilla del CAPSF**, con sus pestañas, y **precios del
+  CAPSF**. La hecha usa precios del ejemplo.
+- La cátedra calcula **por sector del perfil común** y aplica el coeficiente
+  **K = 1,452**. La hecha no lo aplica.
+- La cátedra pide **carátula, croquis, convenio y anexo** de Ross-Heidecke.
+- La fórmula de depreciación es la misma: la depreciación es el precio por el
+  coeficiente, y el valor es precio menos depreciación. Con esto queda resuelto el
+  punto que se había anotado sobre la fórmula del valor actual.
+
+Para ajustarla a la cátedra hace falta:
+
+1. Los **precios unitarios del CAPSF** de la fecha que se use (en la planilla número
+   13 del sitio del Colegio).
+2. La **tabla de Ross-Heidecke** del anexo, para el coeficiente según % de edad y
+   estado. La presentación de la clase sólo trae algunos valores de ejemplo.
+3. La **antigüedad y el estado** del muro del simulacro.
+4. Los datos de la **carátula** (profesional, matrícula, comitente, obra y
+   ubicación) y del **convenio**.
 
 ---
 

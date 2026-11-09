@@ -24,8 +24,12 @@
 
 ## Medianería
 
-- Planilla en `planillas/medianeria/` (`medianeria.py` la genera). Está igual que
-  el ejemplo de la captura; la fórmula de "Valor actual" del ejemplo da más que el
-  valor de reposición y está pendiente de consulta (ver sección 4 de
-  `planillas/PARA_EXPLICAR.md`). Las notas de consulta de este tema van en ese
-  documento y en su versión Word.
+- El método es el de la cátedra (clase "Liquidación de medianería", IRAM 34.869,
+  planilla 13 del CAPSF): perfil común de A y B, cómputo por sector, presupuesto con
+  precios del CAPSF y K = 1,452, depreciación Ross-Heidecke por rubro y 50 % al
+  condómino. Está explicado en la sección 4 de `planillas/PARA_EXPLICAR.md`.
+- La planilla en `planillas/medianeria/` (`medianeria.py`) sigue un ejemplo de 2022
+  y todavía **no** tiene el formato de la cátedra: falta pasarla a las pestañas del
+  CAPSF (carátula, croquis, cómputo, presupuesto, valor de reposición, convenio y
+  anexo).
+- Simulacro: muro del patio lado SO, 16,25 × 3,00 × 0,20 m, Brimax, zapata corrida.
