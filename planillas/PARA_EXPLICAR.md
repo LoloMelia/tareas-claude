@@ -590,9 +590,12 @@ El lote es **exento** (barrio privado) y no tiene medianeras, así que se simul�
 el **muro del patio sobre el lado SO**, con un vecino "1" que construye pegado a él.
 Siguiendo el método de la cátedra:
 
-- **Perfil del Sr. "A"** (muro existente): 16,25 m de largo (de la línea municipal al
-  eje con el otro terreno; la línea de edificación está 5 m más atrás) × 3,00 m de
-  alto × 0,20 m de espesor, ladrillo Brimax 20 × 60 × 5, sobre zapata corrida.
+- **Muro del Sr. "A"**: 16,25 m de largo (de la línea municipal al eje con el otro
+  terreno; la línea de edificación está 5 m más atrás) × 3,00 m de alto × **0,30 m de
+  espesor**, de ladrillo común, sobre zapata corrida. Se construye **encabalgado
+  sobre el eje medianero**: 15 cm en cada terreno. *Encabalgar un muro es levantarlo
+  sobre la línea del límite, de modo que quede una parte en cada terreno; el Código
+  Civil y Comercial lo permite hasta la mitad del espesor del muro (art. 2007).*
 - **Perfil del Sr. "B"** (vecino): construye pegado, con 2 pisos y 5,80 m de alto.
 - **Perfil común:** lo que se superpone es el muro de A hasta los **3,00 m**. Lo que
   el vecino levanta sobre los 3,00 m es exclusivo suyo y **no entra**.
@@ -600,31 +603,36 @@ Siguiendo el método de la cátedra:
   cerramiento (art. 2008), y hasta esa altura el muro es medianero (art. 2009). No se
   encontró un reglamento de Rosario ni de Funes que diga otra cosa; hay que
   consultarlo, y también el reglamento del barrio.
+- **Antigüedad inventada: 2 años, estado 1** (nuevo o muy bueno), valor residual 0 %.
+  Coincide con una casa nueva.
 
-## 4.7 Qué hay hecho y qué falta
+## 4.7 La planilla del simulacro
 
-La planilla que se armó (`planillas/medianeria/Planilla medianeria.xlsx`) tiene otro
-formato: sigue una planilla de ejemplo de 2022, con otros rubros y con precios de
-diciembre de 2022. **No es la planilla de la cátedra.** Las diferencias:
+Está completa, sobre la planilla del CAPSF (jun-2025):
+`planillas/medianeria/Informe medianeria CAPSF (simulacro).xlsx`. Se cargó:
 
-- La cátedra usa la **planilla del CAPSF**, con sus pestañas, y **precios del
-  CAPSF**. La hecha usa precios del ejemplo.
-- La cátedra calcula **por sector del perfil común** y aplica el coeficiente
-  **K = 1,452**. La hecha no lo aplica.
-- La cátedra pide **carátula, croquis, convenio y anexo** de Ross-Heidecke.
-- La fórmula de depreciación es la misma: la depreciación es el precio por el
-  coeficiente, y el valor es precio menos depreciación. Con esto queda resuelto el
-  punto que se había anotado sobre la fórmula del valor actual.
+- **Cómputo**, siguiendo la geometría de la clase: excavación 16,25 × 0,45 × 1,00;
+  zapata corrida 16,25 × 0,45 × 0,30; mampostería de fundación 16,25 × 0,45 × 0,30 y
+  16,25 × 0,30 × 0,40; elevación 16,25 × 0,30 × 3,00; capas aisladoras (2 × 16,25 × 0,30
+  y 2 × 16,25 × 0,20); revoques 16,25 × 3,00 cada uno.
+- **Precios** del CAPSF de junio de 2025, que trae la planilla.
+- **Depreciación** con la tabla de Ross-Heidecke: antigüedad 2 años, estado 1.
 
-Para ajustarla a la cátedra hace falta:
+Resultado:
 
-1. Los **precios unitarios del CAPSF** de la fecha que se use (en la planilla número
-   13 del sitio del Colegio).
-2. La **tabla de Ross-Heidecke** del anexo, para el coeficiente según % de edad y
-   estado. La presentación de la clase sólo trae algunos valores de ejemplo.
-3. La **antigüedad y el estado** del muro del simulacro.
-4. Los datos de la **carátula** (profesional, matrícula, comitente, obra y
-   ubicación) y del **convenio**.
+| | |
+|---|---|
+| Costo neto | $ 7.543.696,07 |
+| Precio teórico (× K = 1,452) | $ 10.953.446,69 |
+| Total del muro con depreciación | $ 10.805.550,62 |
+| **Total de reposición (50 % con el condómino)** | **$ 5.402.775,31** |
+
+La depreciación es chica (cerca del 1 al 3 % por rubro) porque el muro es nuevo. Los
+honorarios y aportes del informe se calculan aparte, según el arancel vigente del
+CAPSF, y no están cargados.
+
+Quedan a completar: profesional, matrícula y comitente de la carátula, y los datos del
+convenio (partes, domicilios, fecha).
 
 ## 4.8 La tabla de Ross-Heidecke
 
@@ -648,8 +656,9 @@ edificios". Da un **coeficiente de depreciación, en %**, que se busca así:
 | Capas aisladoras horizontales | 50 años |
 | Capas aisladoras verticales, azotados hidrófugos y revoques exteriores | 40 años |
 
-(La presentación de la clase usó 40 años para la capa horizontal y 50 para la
-vertical, al revés que el instructivo. Conviene consultar cuál se usa.)
+(La planilla del CAPSF y la clase usan 40 años para la capa horizontal y 50 para la
+vertical, al revés de lo que dice el texto del instructivo. En la planilla del
+simulacro se siguió la planilla. Conviene consultar cuál se usa.)
 
 **Ejemplo de lectura, con los datos de la clase** (antigüedad 13 años, estado 2,5):
 

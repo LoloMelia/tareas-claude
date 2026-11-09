@@ -28,8 +28,8 @@
   planilla 13 del CAPSF): perfil común de A y B, cómputo por sector, presupuesto con
   precios del CAPSF y K = 1,452, depreciación Ross-Heidecke por rubro y 50 % al
   condómino. Está explicado en la sección 4 de `planillas/PARA_EXPLICAR.md`.
-- La planilla en `planillas/medianeria/` (`medianeria.py`) sigue un ejemplo de 2022
-  y todavía **no** tiene el formato de la cátedra: falta pasarla a las pestañas del
-  CAPSF (carátula, croquis, cómputo, presupuesto, valor de reposición, convenio y
-  anexo).
-- Simulacro: muro del patio lado SO, 16,25 × 3,00 × 0,20 m, Brimax, zapata corrida.
+- Planilla completa del simulacro: `planillas/medianeria/Informe medianeria CAPSF (simulacro).xlsx`
+  (generada con `completar_capsf.py` sobre el modelo CAPSF jun-2025, por UNO). La hoja
+  vieja `Planilla medianeria.xlsx` sigue un ejemplo de 2022 y ya no se usa.
+- Simulacro: muro del patio lado SO, 16,25 × 3,00 × 0,30 m (15 cm de cada lado del eje
+  medianero), ladrillo común, zapata corrida; antigüedad 2 años, estado 1.

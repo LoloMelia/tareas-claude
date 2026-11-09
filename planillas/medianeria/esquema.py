@@ -18,8 +18,8 @@ ax.text(LARGO / 2, 5.0, 'VECINO  "1"  (construye pegado al muro: 2 pisos, 5,80 m
 ax.add_patch(Rectangle((-1, -4.6), LARGO + 3, 4.6, fc="#e8e8e8", ec="none"))
 ax.text(LARGO / 2 + 3.5, -5.2, 'NUESTRO LOTE  "A"  (patio)', ha="center", fontsize=12)
 ax.add_patch(Rectangle((0, -0.12), LARGO, 0.24, fc=ROJO, ec=NEGRO, lw=0.8))
-ax.annotate("MURO MEDIANERO DEL PATIO  (lado SO)\nladrillo Brimax 20 cm · zapata corrida · 3,00 m de alto", xy=(10.5, 0.1),
-            xytext=(8.5, 7.0), fontsize=11, color=ROJO, arrowprops=dict(arrowstyle="->", color=ROJO, lw=1.5))
+ax.annotate("MURO MEDIANERO DEL PATIO  (lado SO)\nladrillo común de 30 cm (15 cm de cada lado del eje medianero)\nzapata corrida · 3,00 m de alto", xy=(10.5, 0.1),
+            xytext=(6.5, 6.6), fontsize=11, color=ROJO, arrowprops=dict(arrowstyle="->", color=ROJO, lw=1.5))
 ax.add_patch(Rectangle((5, -4.4), 9.5, 4.0, fc="#cfcfcf", ec=NEGRO, lw=0.8))
 ax.text(9.75, -2.2, "casa", ha="center", fontsize=12)
 for x, txt in ((0, "línea municipal"), (5, "línea de edificación\n(5 m)")):
@@ -38,46 +38,47 @@ bx = fig.add_axes([0.03, 0.03, 0.94, 0.47]); bx.set_aspect("equal"); bx.axis("of
 bx.set_title("CORTE A-A'  por el muro medianero  (cotas en m; ancho del muro ampliado 3 veces)", fontsize=14, fontweight="bold", loc="left")
 SX = 3.0
 def R(x, z, w, h, **kw): bx.add_patch(Rectangle((x * SX, z), w * SX, h, **kw))
-Z0 = -1.2; NT = 0.0
-R(-2.4, Z0, 2.4 - 0.225, 1.2, fc="#efe6d6", ec="none")
-R(0.225, Z0, 2.4 - 0.225, 1.2, fc="#efe6d6", ec="none")
+Z0 = -1.0; NT = 0.0
+R(-2.4, Z0, 2.4 - 0.225, 1.0, fc="#efe6d6", ec="none")
+R(0.225, Z0, 2.4 - 0.225, 1.0, fc="#efe6d6", ec="none")
 bx.plot([-2.4 * SX, -0.225 * SX], [NT, NT], color="#6b5a3c", lw=1.5)
 bx.plot([0.225 * SX, 2.4 * SX], [NT, NT], color="#6b5a3c", lw=1.5)
-R(-0.225, Z0, 0.45, 1.2, fc="white", ec="#777777", lw=0.8, ls=(0, (3, 2)))
-R(-0.225, Z0, 0.45, 0.30, fc="#c9c9c9", ec=NEGRO, lw=0.8, hatch="...")
-R(-0.225, Z0 + 0.30, 0.45, 0.30, fc="#d9a58b", ec=NEGRO, lw=0.8, hatch="///")
-R(-0.15, Z0 + 0.60, 0.30, 0.20, fc="#8e8e8e", ec=NEGRO, lw=0.8, hatch="xx")
-R(-0.10, Z0 + 0.80, 0.20, 0.70, fc="#d9a58b", ec=NEGRO, lw=0.8, hatch="///")
-zc = Z0 + 1.50
-bx.plot([-0.13 * SX, 0.13 * SX], [zc, zc], color=NEGRO, lw=3)
-R(-0.10, zc, 0.20, ALTO, fc="#d9a58b", ec=NEGRO, lw=0.8, hatch="///")
-R(-0.12, zc, 0.02, ALTO, fc="#f2f2f2", ec=NEGRO, lw=0.6)
-R(0.10, zc, 0.02, ALTO, fc="#f2f2f2", ec=NEGRO, lw=0.6)
-# edificio del vecino: llega a 5,80, pero el muro liquidado termina en 2,50
-R(-2.4, zc, 2.28, VECINO_ALTO, fc="#f4f4f4", ec=NEGRO, lw=0.8, ls=(0, (4, 3)))
-R(-2.4, zc + ALTO - 0.0, 2.28, 0.0001, fc="none", ec="#c0392b", lw=1.6)
-bx.plot([-0.12 * SX, -2.4 * SX], [zc + ALTO, zc + ALTO], color=ROJO, lw=1.6, ls=(0, (5, 3)))
-bx.text(-1.3 * SX, zc + VECINO_ALTO - 1.1, 'VECINO "1"\n(2 pisos, 5,80 m)', ha="center", fontsize=12, color="#444444")
-bx.text(-1.3 * SX, zc + ALTO + 0.12, "la parte sobre los 3,00 m la construye el vecino\ny no entra en la liquidación", ha="center", fontsize=9.5, color=ROJO)
-bx.text(1.3 * SX, 1.6, 'NUESTRO PATIO "A"', ha="center", fontsize=13, color="#444444")
+R(-0.225, Z0, 0.45, 1.0, fc="white", ec="#777777", lw=0.8, ls=(0, (3, 2)))
+R(-0.225, Z0, 0.45, 0.30, fc="#c9c9c9", ec=NEGRO, lw=0.8, hatch="...")            # zapata corrida
+R(-0.225, Z0 + 0.30, 0.45, 0.30, fc="#d9a58b", ec=NEGRO, lw=0.8, hatch="///")     # mamposteria de fundacion 0,45 x 0,30
+R(-0.15, Z0 + 0.60, 0.30, 0.40, fc="#d9a58b", ec=NEGRO, lw=0.8, hatch="///")      # mamposteria de fundacion 0,30 x 0,40
+bx.plot([-0.17 * SX, 0.17 * SX], [NT, NT], color=NEGRO, lw=3)                       # capa aisladora
+R(-0.15, NT, 0.30, ALTO, fc="#d9a58b", ec=NEGRO, lw=0.8, hatch="///")             # elevacion 0,30
+R(-0.17, NT, 0.02, ALTO, fc="#f2f2f2", ec=NEGRO, lw=0.6)
+R(0.15, NT, 0.02, ALTO, fc="#f2f2f2", ec=NEGRO, lw=0.6)
+R(-2.4, NT, 2.25, VECINO_ALTO, fc="#f4f4f4", ec=NEGRO, lw=0.8, ls=(0, (4, 3)))   # edificio del vecino
+bx.plot([-0.17 * SX, -2.4 * SX], [NT + ALTO, NT + ALTO], color=ROJO, lw=1.6, ls=(0, (5, 3)))
+bx.plot([0, 0], [Z0 - 0.15, NT + VECINO_ALTO + 0.2], color="#1f4e9e", lw=1.2, ls=(0, (8, 4)))
+bx.text(0.0, NT + VECINO_ALTO + 0.3, "eje medianero", ha="center", fontsize=10.5, color="#1f4e9e")
+bx.annotate("", xy=(-0.15 * SX, NT + ALTO + 0.35), xytext=(0, NT + ALTO + 0.35), arrowprops=dict(arrowstyle="<->", lw=1))
+bx.annotate("", xy=(0, NT + ALTO + 0.35), xytext=(0.15 * SX, NT + ALTO + 0.35), arrowprops=dict(arrowstyle="<->", lw=1))
+bx.text(-0.075 * SX, NT + ALTO + 0.5, "0,15", ha="center", fontsize=10)
+bx.text(0.075 * SX, NT + ALTO + 0.5, "0,15", ha="center", fontsize=10)
+bx.text(-1.3 * SX, NT + VECINO_ALTO - 1.1, 'VECINO "1"\n(2 pisos, 5,80 m)', ha="center", fontsize=12, color="#444444")
+bx.text(-1.3 * SX, NT + ALTO + 0.15, "la parte sobre los 3,00 m la construye el vecino\ny no entra en la liquidación", ha="center", fontsize=9.5, color=ROJO)
+bx.text(1.3 * SX, 1.4, 'NUESTRO PATIO "A"', ha="center", fontsize=13, color="#444444")
 bx.text(-2.35 * SX, NT - 0.22, "terreno", fontsize=10, color="#6b5a3c")
 XT = 3.0 * SX
 def ref(texto, y_obj, x_obj, y_txt):
     bx.annotate(texto, xy=(x_obj * SX, y_obj), xytext=(XT, y_txt), fontsize=10.5, va="center",
                 arrowprops=dict(arrowstyle="-", color="#888888", lw=0.8))
-ref("Revoque exterior (I+J+E) y revoque interior (J+E): 16,25 × 3,00 cada uno", zc + 2.3, 0.12, 4.6)
-ref("Mampostería de elevación: 16,25 × 3,00 × 0,20", zc + 1.0, 0.10, 3.7)
-ref("Doble capa aisladora, horizontal y vertical", zc, 0.13, 2.8)
-ref("Mampostería de cimientos 20 cm: 0,70 de alto × 0,20", Z0 + 1.15, 0.10, 1.9)
-ref("Encadenado de cimientos H°A°: 0,20 × 0,30", Z0 + 0.70, 0.15, 1.0)
-ref("Mampostería de cimientos 45 cm: 0,30 × 0,45", Z0 + 0.45, 0.225, 0.1)
-ref("Banquina de hormigón sin armar: 0,30 × 0,45", Z0 + 0.15, 0.225, -0.8)
-ref("Excavación de cimientos: 1,20 de profundidad × 0,45", Z0 + 0.03, 0.225, -1.7)
-bx.annotate("", xy=(-2.6 * SX, zc), xytext=(-2.6 * SX, zc + ALTO), arrowprops=dict(arrowstyle="<->", lw=1))
-bx.text(-2.78 * SX, zc + ALTO / 2, "3,00", rotation=90, ha="center", va="center", fontsize=11)
+ref("Revoque exterior (azotado + grueso + fino) y revoque interior (grueso + fino): 16,25 × 3,00 cada uno", NT + 2.3, 0.16, 4.6)
+ref("Mampostería de elevación: 16,25 × 0,30 × 3,00", NT + 1.2, 0.15, 3.6)
+ref("Capas aisladoras: horizontal 2 × 16,25 × 0,30  ·  vertical 2 × 16,25 × 0,20", NT, 0.17, 2.6)
+ref("Mampostería de fundación: 16,25 × 0,30 × 0,40", Z0 + 0.8, 0.15, 1.4)
+ref("Mampostería de fundación: 16,25 × 0,45 × 0,30", Z0 + 0.45, 0.225, 0.4)
+ref("Zapata corrida de hormigón de cascotes: 16,25 × 0,45 × 0,30", Z0 + 0.15, 0.225, -0.6)
+ref("Excavación de cimientos: 16,25 × 0,45 × 1,00", Z0 + 0.03, 0.225, -1.5)
+bx.annotate("", xy=(-2.6 * SX, NT), xytext=(-2.6 * SX, NT + ALTO), arrowprops=dict(arrowstyle="<->", lw=1))
+bx.text(-2.78 * SX, NT + ALTO / 2, "3,00", rotation=90, ha="center", va="center", fontsize=11)
 bx.annotate("", xy=(-2.6 * SX, Z0), xytext=(-2.6 * SX, NT), arrowprops=dict(arrowstyle="<->", lw=1))
-bx.text(-2.78 * SX, Z0 / 2, "1,20", rotation=90, ha="center", va="center", fontsize=11)
-bx.set_xlim(-3.0 * SX, 10.5); bx.set_ylim(-2.1, 7.0)
+bx.text(-2.78 * SX, Z0 / 2, "1,00", rotation=90, ha="center", va="center", fontsize=11)
+bx.set_xlim(-3.0 * SX, 11.5); bx.set_ylim(-2.0, 7.4)
 fig.text(0.03, 0.012, "Esquema del simulacro: lote exento (barrio privado), sin medianera real. Se toma el muro del patio sobre el lado SO como medianero; "
          "los ítems y medidas son los de la hoja \"Medianeria (simulacro)\".", fontsize=10.5, color="#444444")
 fig.savefig("/home/user/tareas-claude/planillas/medianeria/esquema_medianera.png", bbox_inches="tight")
