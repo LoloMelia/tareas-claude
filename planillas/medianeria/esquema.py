@@ -18,7 +18,7 @@ ax.text(LARGO / 2, 5.0, 'VECINO  "1"  (construye pegado al muro: 2 pisos, 5,80 m
 ax.add_patch(Rectangle((-1, -4.6), LARGO + 3, 4.6, fc="#e8e8e8", ec="none"))
 ax.text(LARGO / 2 + 3.5, -5.2, 'NUESTRO LOTE  "A"  (patio)', ha="center", fontsize=12)
 ax.add_patch(Rectangle((0, -0.12), LARGO, 0.24, fc=ROJO, ec=NEGRO, lw=0.8))
-ax.annotate("MURO MEDIANERO DEL PATIO  (lado SO)\nladrillo común de 30 cm (15 cm de cada lado del eje medianero)\nzapata corrida · 3,00 m de alto", xy=(10.5, 0.1),
+ax.annotate("MURO MEDIANERO DEL PATIO  (lado SO)\nUN SOLO muro de ladrillo común de 30 cm,\ncon la línea del límite pasando por el medio\nzapata corrida · 3,00 m de alto", xy=(10.5, 0.1),
             xytext=(6.5, 6.6), fontsize=11, color=ROJO, arrowprops=dict(arrowstyle="->", color=ROJO, lw=1.5))
 ax.add_patch(Rectangle((5, -4.4), 9.5, 4.0, fc="#cfcfcf", ec=NEGRO, lw=0.8))
 ax.text(9.75, -2.2, "casa", ha="center", fontsize=12)
@@ -59,6 +59,7 @@ bx.annotate("", xy=(-0.15 * SX, NT + ALTO + 0.35), xytext=(0, NT + ALTO + 0.35),
 bx.annotate("", xy=(0, NT + ALTO + 0.35), xytext=(0.15 * SX, NT + ALTO + 0.35), arrowprops=dict(arrowstyle="<->", lw=1))
 bx.text(-0.075 * SX, NT + ALTO + 0.5, "0,15", ha="center", fontsize=10)
 bx.text(0.075 * SX, NT + ALTO + 0.5, "0,15", ha="center", fontsize=10)
+bx.text(0, NT + ALTO + 0.95, "un solo muro de 0,30 m", ha="center", fontsize=10.5, color="#c0392b")
 bx.text(-1.3 * SX, NT + VECINO_ALTO - 1.1, 'VECINO "1"\n(2 pisos, 5,80 m)', ha="center", fontsize=12, color="#444444")
 bx.text(-1.3 * SX, NT + ALTO + 0.15, "la parte sobre los 3,00 m la construye el vecino\ny no entra en la liquidación", ha="center", fontsize=9.5, color=ROJO)
 bx.text(1.3 * SX, 1.4, 'NUESTRO PATIO "A"', ha="center", fontsize=13, color="#444444")

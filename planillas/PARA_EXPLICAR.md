@@ -593,9 +593,13 @@ Siguiendo el método de la cátedra:
 - **Muro del Sr. "A"**: 16,25 m de largo (de la línea municipal al eje con el otro
   terreno; la línea de edificación está 5 m más atrás) × 3,00 m de alto × **0,30 m de
   espesor**, de ladrillo común, sobre zapata corrida. Se construye **encabalgado
-  sobre el eje medianero**: 15 cm en cada terreno. *Encabalgar un muro es levantarlo
+  sobre el eje medianero**: es **un solo muro de 30 cm**, no dos de 15, y la línea del
+  límite pasa por su centro, así que 15 cm de su espesor quedan en cada terreno. *Encabalgar un muro es levantarlo
   sobre la línea del límite, de modo que quede una parte en cada terreno; el Código
   Civil y Comercial lo permite hasta la mitad del espesor del muro (art. 2007).*
+- **Cimiento:** zapata corrida de hormigón de cascotes de 0,45 m de ancho × 0,30 m de
+  alto, también centrada sobre el eje, y encima mampostería de fundación (0,45 × 0,30 y
+  0,30 × 0,40) hasta el nivel ±0,00. La excavación es de 1,00 m de profundidad.
 - **Perfil del Sr. "B"** (vecino): construye pegado, con 2 pisos y 5,80 m de alto.
 - **Perfil común:** lo que se superpone es el muro de A hasta los **3,00 m**. Lo que
   el vecino levanta sobre los 3,00 m es exclusivo suyo y **no entra**.
@@ -603,8 +607,8 @@ Siguiendo el método de la cátedra:
   cerramiento (art. 2008), y hasta esa altura el muro es medianero (art. 2009). No se
   encontró un reglamento de Rosario ni de Funes que diga otra cosa; hay que
   consultarlo, y también el reglamento del barrio.
-- **Antigüedad inventada: 2 años, estado 1** (nuevo o muy bueno), valor residual 0 %.
-  Coincide con una casa nueva.
+- **Antigüedad inventada: 5 años, estado 1** (nuevo o muy bueno), valor residual 0 %.
+  Es la antigüedad de la casa.
 
 ## 4.7 La planilla del simulacro
 
@@ -616,7 +620,7 @@ Está completa, sobre la planilla del CAPSF (jun-2025):
   16,25 × 0,30 × 0,40; elevación 16,25 × 0,30 × 3,00; capas aisladoras (2 × 16,25 × 0,30
   y 2 × 16,25 × 0,20); revoques 16,25 × 3,00 cada uno.
 - **Precios** del CAPSF de junio de 2025, que trae la planilla.
-- **Depreciación** con la tabla de Ross-Heidecke: antigüedad 2 años, estado 1.
+- **Depreciación** con la tabla de Ross-Heidecke: antigüedad 5 años, estado 1.
 
 Resultado:
 
@@ -624,10 +628,10 @@ Resultado:
 |---|---|
 | Costo neto | $ 7.543.696,07 |
 | Precio teórico (× K = 1,452) | $ 10.953.446,69 |
-| Total del muro con depreciación | $ 10.805.550,62 |
-| **Total de reposición (50 % con el condómino)** | **$ 5.402.775,31** |
+| Total del muro con depreciación | $ 10.516.342,37 |
+| **Total de reposición (50 % con el condómino)** | **$ 5.258.171,18** |
 
-La depreciación es chica (cerca del 1 al 3 % por rubro) porque el muro es nuevo. Los
+La depreciación es chica (entre 3 y 7 % por rubro) porque el muro es nuevo. Los
 honorarios y aportes del informe se calculan aparte, según el arancel vigente del
 CAPSF, y no están cargados.
 

@@ -52,19 +52,19 @@ limpiar(C, "C40:K40")
 txt(C, "C42", "sector A.B.F.G"); num(C, "E42", L); num(C, "G42", 3.00)                          # revoque exterior
 limpiar(C, "C43:K43")
 
-# ---------------- 5-val.reposicion: antiguedad 2 anios, estado 1 (muy bueno), residual 0 %
+# ---------------- 5-val.reposicion: antiguedad 5 anios, estado 1 (muy bueno), residual 0 %
 V = "5-val.reposicion"
 sv = S.getByName(V)
 sv.getColumns().getByName("G").IsVisible = True
 for col in "GHIJKL": sv.getColumns().getByName(col).IsVisible = True
 # coeficientes de la tabla de Ross-Heidecke, estado 1, segun la edad en % de cada rubro
-KT = {20: 1.020, 21: 1.020, 22: 1.020,   # 2/90 = 2 %
-      23: 2.625,                          # horizontal 2/40 = 5 %
-      24: 2.080,                          # vertical 2/50 = 4 %
-      25: 2.625,                          # revoque exterior 2/40 = 5 %
-      26: 1.545}                          # revoque interior 2/60 = 3 %
+KT = {20: 3.180, 21: 3.180, 22: 3.180,   # 5/90 = 5,6 -> 6 %
+      23: 7.345,                          # horizontal 5/40 = 12,5 -> 13 %
+      24: 5.500,                          # vertical 5/50 = 10 %
+      25: 7.345,                          # revoque exterior 5/40 = 12,5 -> 13 %
+      26: 4.320}                          # revoque interior 5/60 = 8,3 -> 8 %
 for r in range(19, 27):
-    num(V, "H%d" % r, 2); num(V, "I%d" % r, 1)
+    num(V, "H%d" % r, 5); num(V, "I%d" % r, 1)
 for r, k in KT.items(): num(V, "K%d" % r, k)
 
 # ---------------- 2-croquis: se reemplazan los dibujos del ejemplo por los del simulacro
@@ -77,7 +77,7 @@ def imagen(archivo, x, y, w, h):
     g = doc.createInstance("com.sun.star.drawing.GraphicObjectShape")
     g.GraphicURL = "file://" + os.path.join(AQUI, archivo)
     dp.add(g); g.Position = Point(x, y); g.Size = Size(w, h)
-imagen("esquema_planta.png", 600, 4800, 10220, 6490)
+imagen("esquema_planta.png", 600, 4800, 8674, 6490)
 imagen("esquema_corte.png", 400, 12400, 15800, 4900)
 txt("2-croquis", "D10", "Lote 230, Barrio Vida, Funes (muro del patio, lado SO)")
 txt("2-croquis", "G27", "Sr. A: en condominio")
