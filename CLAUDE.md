@@ -32,5 +32,5 @@
   (generada con `completar_capsf.py` sobre el modelo CAPSF jun-2025, por UNO). La hoja
   vieja `Planilla medianeria.xlsx` sigue un ejemplo de 2022 y ya no se usa.
 - Simulacro: muro del patio lado SO, 16,25 × 3,00 × 0,30 m (15 cm de cada lado del eje
-  medianero), ladrillo común, zapata corrida; antigüedad 13 años, estado 2,5 (como la clase), residual 5 % sólo en la mampostería de
-  elevación; capas aisladoras 40 años (horizontal) y 50 (vertical).
+  medianero), ladrillo común, zapata corrida; antigüedad 13 años, estado 2,5 (como la clase); criterio del CAPSF (no el de la clase):
+  residual 0 %, capa aisladora horizontal 50 años y vertical 40.

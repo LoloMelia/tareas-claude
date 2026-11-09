@@ -607,9 +607,9 @@ Siguiendo el método de la cátedra:
   cerramiento (art. 2008), y hasta esa altura el muro es medianero (art. 2009). No se
   encontró un reglamento de Rosario ni de Funes que diga otra cosa; hay que
   consultarlo, y también el reglamento del barrio.
-- **Antigüedad inventada: 13 años, estado 2,5**, los mismos datos del ejemplo de la clase,
-  con **valor residual de 5 % sólo en la mampostería de elevación**, también como la
-  clase.
+- **Antigüedad inventada: 13 años, estado 2,5**, los datos del ejemplo de la clase. En
+  lo demás se siguió **el criterio del CAPSF** (instructivo de la planilla): valor
+  residual 0 %, capa aisladora horizontal de 50 años y vertical de 40.
 
 ## 4.7 La planilla del simulacro
 
@@ -629,10 +629,10 @@ Resultado:
 |---|---|
 | Costo neto | $ 7.543.696,07 |
 | Precio teórico (× K = 1,452) | $ 10.953.446,69 |
-| Total del muro con depreciación | $ 9.031.168,60 |
-| **Total de reposición (50 % con el condómino)** | **$ 4.515.584,30** |
+| Total del muro con depreciación | $ 8.994.818,60 |
+| **Total de reposición (50 % con el condómino)** | **$ 4.497.409,30** |
 
-La depreciación va del 15 % (mampostería y cimientos) al 28 % (capas aisladoras horizontales y revoque exterior). Los
+La depreciación va del 15 % (mampostería y cimientos) al 28 % (capa aisladora vertical y revoque exterior). Los
 honorarios y aportes del informe se calculan aparte, según el arancel vigente del
 CAPSF, y no están cargados.
 
@@ -686,15 +686,20 @@ La tabla completa, tal como está en la planilla:
 ## 4.9 Diferencias entre la planilla del CAPSF y la cátedra
 
 Hay dos datos en los que la planilla del Colegio (y su instructivo) no coinciden con la
-clase de la cátedra. En el simulacro se siguió **la cátedra**:
+clase de la cátedra. En el simulacro se siguió **el criterio del CAPSF**, por ser el
+institucional (decisión de la autora; la clase podría tener un error):
 
 | Dato | Planilla / instructivo del CAPSF | Clase de la cátedra | Se usó |
 |---|---|---|---|
-| **Vida útil de las capas aisladoras** | El texto del instructivo dice 50 años para la horizontal y 40 para la vertical; las fórmulas de la planilla usan 40 y 50 | Horizontal 40 años, vertical 50 | **Horizontal 40, vertical 50** (cátedra y fórmulas de la planilla) |
-| **Valor residual** | 0 % por defecto (el instructivo dice que suele estimarse en 5 % en las mamposterías) | 5 % en la mampostería de elevación | **5 % sólo en la mampostería de elevación** |
+| **Vida útil de las capas aisladoras** | El instructivo dice 50 años para la horizontal y 40 para la vertical (las fórmulas de la planilla venían al revés, y se corrigieron) | Horizontal 40 años, vertical 50 | **Horizontal 50, vertical 40** (instructivo del CAPSF) |
+| **Valor residual** | 0 % por defecto | 5 % en la mampostería de elevación | **0 %** (CAPSF) |
 
-Además, la planilla del CAPSF viene cargada con 35 años y estado 2,5, y la clase usa
-13 años y estado 2,5; en el simulacro se usan los de la clase.
+La **antigüedad (13 años) y el estado (2,5)** son los del ejemplo de la clase; la planilla
+del CAPSF venía con 35 años y estado 2,5 sólo de relleno.
+
+Si en la defensa piden el criterio de la cátedra, se cambia en la pestaña
+"5-val.reposicion": vida útil de las capas aisladoras (columna "% Edad"), su coeficiente
+de la tabla, y el valor residual de la mampostería de elevación (5 %).
 
 La altura del muro quedó decidida en **3,00 m**.
 
