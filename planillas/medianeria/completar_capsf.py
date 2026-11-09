@@ -52,20 +52,21 @@ limpiar(C, "C40:K40")
 txt(C, "C42", "sector A.B.F.G"); num(C, "E42", L); num(C, "G42", 3.00)                          # revoque exterior
 limpiar(C, "C43:K43")
 
-# ---------------- 5-val.reposicion: antiguedad 5 anios, estado 1 (muy bueno), residual 0 %
+# ---------------- 5-val.reposicion: antiguedad 13 anios, estado 2,5 (como la clase), residual 5 % solo en la mamposteria de elevacion
 V = "5-val.reposicion"
 sv = S.getByName(V)
 sv.getColumns().getByName("G").IsVisible = True
 for col in "GHIJKL": sv.getColumns().getByName(col).IsVisible = True
 # coeficientes de la tabla de Ross-Heidecke, estado 1, segun la edad en % de cada rubro
-KT = {20: 3.180, 21: 3.180, 22: 3.180,   # 5/90 = 5,6 -> 6 %
-      23: 7.345,                          # horizontal 5/40 = 12,5 -> 13 %
-      24: 5.500,                          # vertical 5/50 = 10 %
-      25: 7.345,                          # revoque exterior 5/40 = 12,5 -> 13 %
-      26: 4.320}                          # revoque interior 5/60 = 8,3 -> 8 %
+KT = {20: 15.42, 21: 15.42, 22: 15.42,   # 13/90 = 14 %
+      23: 28.26,                          # horizontal 13/40 = 33 %
+      24: 23.14,                          # vertical 13/50 = 26 %
+      25: 28.26,                          # revoque exterior 13/40 = 33 %
+      26: 20.42}                          # revoque interior 13/60 = 22 %
 for r in range(19, 27):
-    num(V, "H%d" % r, 5); num(V, "I%d" % r, 1)
+    num(V, "H%d" % r, 13); num(V, "I%d" % r, 2.5)
 for r, k in KT.items(): num(V, "K%d" % r, k)
+num(V, "G22", 5)                      # valor residual 5 % en la mamposteria de elevacion, como en la clase
 
 # ---------------- 2-croquis: se reemplazan los dibujos del ejemplo por los del simulacro
 Q = S.getByName("2-croquis"); dp = Q.DrawPage
