@@ -53,6 +53,10 @@ R(-0.17, NT, 0.02, ALTO, fc="#f2f2f2", ec=NEGRO, lw=0.6)
 R(0.15, NT, 0.02, ALTO, fc="#f2f2f2", ec=NEGRO, lw=0.6)
 R(-2.4, NT, 2.25, VECINO_ALTO, fc="#f4f4f4", ec=NEGRO, lw=0.8, ls=(0, (4, 3)))   # edificio del vecino
 bx.plot([-0.17 * SX, -2.4 * SX], [NT + ALTO, NT + ALTO], color=ROJO, lw=1.6, ls=(0, (5, 3)))
+# marca de los 2,00 m: altura obligatoria del cerco (Reglamento de Edificacion de Rosario)
+VERDE = "#1e7a3c"
+bx.plot([-2.4 * SX, 2.4 * SX], [NT + 2.0, NT + 2.0], color=VERDE, lw=1.8, ls=(0, (7, 3)))
+bx.text(1.0 * SX, NT + 2.1, "2,00 m: altura obligatoria del cerco (Reglamento de Rosario)", fontsize=10.5, color=VERDE, ha="left")
 bx.plot([0, 0], [Z0 - 0.15, NT + VECINO_ALTO + 0.2], color="#1f4e9e", lw=1.2, ls=(0, (8, 4)))
 bx.text(0.0, NT + VECINO_ALTO + 0.3, "eje medianero", ha="center", fontsize=10.5, color="#1f4e9e")
 bx.annotate("", xy=(-0.15 * SX, NT + ALTO + 0.35), xytext=(0, NT + ALTO + 0.35), arrowprops=dict(arrowstyle="<->", lw=1))

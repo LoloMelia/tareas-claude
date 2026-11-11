@@ -601,6 +601,11 @@ Siguiendo el método de la cátedra:
   alto, también centrada sobre el eje, y encima mampostería de fundación (0,45 × 0,30 y
   0,30 × 0,40) hasta el nivel ±0,00. La excavación es de 1,00 m de profundidad.
 - **Perfil del Sr. "B"** (vecino): construye pegado, con 2 pisos y 5,80 m de alto.
+- **Altura obligatoria del cerco: 2,00 m.** En el esquema está marcada a 2,00 m. Según el
+  Reglamento de Edificación de Rosario (sección 3.2, "De las cercas y aceras"), el cerco
+  entre predios tiene 2 m de altura desde el nivel del terreno de mayor cota. **Hay que
+  verificarlo en el texto oficial** (no se pudo abrir desde esta sesión) y con el
+  reglamento del barrio. El muro del simulacro llega a 3,00 m, 1 m por encima de esa marca.
 - **Perfil común:** lo que se superpone es el muro de A hasta los **3,00 m**. Lo que
   el vecino levanta sobre los 3,00 m es exclusivo suyo y **no entra**.
 - **Altura de 3,00 m:** es el mínimo del Código Civil y Comercial para un muro de
