@@ -618,31 +618,38 @@ Siguiendo el método de la cátedra:
 
 ## 4.7 La planilla del simulacro
 
-Está completa, sobre la planilla del CAPSF (jun-2025):
-`planillas/medianeria/Informe medianeria CAPSF (simulacro).xlsx`. Se cargó:
+La planilla final (`planillas/medianeria/Planilla medianeria.xlsx`) tiene el formato de la
+planilla de ejemplo de la clase ("Planilla para la liquidación de derechos de medianería"),
+con el cómputo del gráfico de AutoCAD y los precios unitarios del CAPSF de junio de 2025
+(sin actualizar). Cómo se arma cada columna:
 
-- **Cómputo**, siguiendo la geometría de la clase: excavación 16,25 × 0,45 × 1,00;
-  zapata corrida 16,25 × 0,45 × 0,30; mampostería de fundación 16,25 × 0,45 × 0,30 y
-  16,25 × 0,30 × 0,40; elevación 16,25 × 0,30 × 3,00; capas aisladoras (2 × 16,25 × 0,30
-  y 2 × 16,25 × 0,20); revoques 16,25 × 3,00 cada uno.
-- **Precios** del CAPSF de junio de 2025, que trae la planilla.
-- **Depreciación** con la tabla de Ross-Heidecke: antigüedad 13 años, estado 2,5.
+- **Cómputo:** del perfil común dibujado. Cimiento: 15,98 m (sector A'A - I'I) con
+  excavación de 1,00 × 0,45, zapata corrida de 0,30 × 0,45 y mampostería de fundación
+  (0,30 × 0,45 y 0,40 × 0,30). Elevación: tres sectores, 3,63 × 4,20, 6,33 × 6,50 y
+  6,00 × 3,50 m, de 0,30 m de espesor (77,39 m² de perfil, 23,22 m³). Capas aisladoras
+  (2 × 15,98 × 0,30 y 2 × 15,98 × 0,20) y revoques sobre los 77,39 m² de cada cara.
+- **Coste unitario:** precio del CAPSF por 1,20 (10 % de gastos generales y 10 % de
+  beneficio). **IVA:** 21 % de ese coste. **Precio unitario:** coste + IVA, es decir, el
+  precio del CAPSF por **1,452**.
+- **Depreciación:** tabla de Ross-Heidecke, con 13 años de antigüedad y estado 2,5, valor
+  residual 0 % y vidas útiles del CAPSF (mampostería 90, capa horizontal 50, capa vertical
+  40, revoque exterior 40, revoque interior 60).
+- **Valor actual** = valor de reposición × (1 − coeficiente / 100). **Total a liquidar** =
+  la mitad.
 
 Resultado:
 
 | | |
 |---|---|
-| Costo neto | $ 7.543.696,07 |
-| Precio teórico (× K = 1,452) | $ 10.953.446,69 |
-| Total del muro con depreciación | $ 8.994.818,60 |
-| **Total de reposición (50 % con el condómino)** | **$ 4.497.409,30** |
+| Valor de reposición total (precio teórico) | $ 15.816.187,59 |
+| **Total a liquidar (el 50 %)** | **$ 6.470.837,45** |
+| Honorarios (10 % del valor de reposición) | $ 1.581.618,76 |
 
-La depreciación va del 15 % (mampostería y cimientos) al 28 % (capa aisladora vertical y revoque exterior). Los
-honorarios y aportes del informe se calculan aparte, según el arancel vigente del
-CAPSF, y no están cargados.
+**Control del cómputo contra el dibujo:** los sectores de elevación suman 77,39 m² sobre
+el nivel ±0,00, y el cimiento agrega unos 16 m² (15,98 × 1,00): **93,37 m²**, casi igual a
+los **93,53 m²** que marca el dibujo para el perfil en condominio.
 
-Quedan a completar: profesional, matrícula y comitente de la carátula, y los datos del
-convenio (partes, domicilios, fecha).
+Los datos de la carátula y del convenio de la planilla del Colegio quedan a completar.
 
 ## 4.8 La tabla de Ross-Heidecke
 
