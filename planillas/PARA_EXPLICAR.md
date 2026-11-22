@@ -715,6 +715,123 @@ de la tabla, y el valor residual de la mampostería de elevación (5 %).
 
 La altura del muro quedó decidida en **3,00 m**.
 
+# 5. Condensación superficial e intersticial (IRAM 11625)
+
+*Explicación del método. Los datos de la cátedra (temperaturas de diseño, humedades y
+valores de permeabilidad al vapor de cada material) se cargan cuando se arme la planilla.*
+
+## 5.1 Qué es y por qué se verifica
+
+El aire interior tiene vapor de agua. Si ese aire toca algo **más frío que su punto de
+rocío**, el vapor se convierte en agua: **condensa**. Eso puede pasar en dos lugares:
+
+- **Condensación superficial:** sobre la cara interior del muro (la que se ve). Aparecen
+  gotas, humedad y hongos en las paredes.
+- **Condensación intersticial:** **adentro** de las capas del muro, que no se ve. Moja la
+  aislación y los materiales y los deteriora. Es más peligrosa justamente porque no se ve.
+
+Se verifica que, con el frío exterior de diseño, **ninguna de las dos aparezca** (o que lo
+que aparezca se pueda secar).
+
+## 5.2 Los datos que hacen falta
+
+| Dato | Para qué sirve |
+|---|---|
+| Temperatura interior (ti) y exterior de diseño (te) | cuánto frío hace afuera y cuánto calor adentro |
+| Humedad relativa interior y exterior (HR) | cuánto vapor tiene el aire |
+| Espesor (e) y conductividad (λ) de cada capa | la resistencia térmica R = e / λ, igual que en la transmitancia |
+| Factor de resistencia al vapor (μ) de cada material | cuánto frena cada capa el paso del vapor |
+
+La resistencia térmica de cada capa y el total (RT) ya están calculados en la planilla de
+transmitancia. Las temperaturas y humedades de diseño las fija la norma o la cátedra.
+
+## 5.3 Condensación superficial, paso a paso
+
+1. **Temperatura de la superficie interior** del muro:
+
+   ```
+   θsi = ti − (Rsi / RT) × (ti − te)
+   ```
+
+   Cuanto mejor aísla el muro (RT mayor), más cerca de la temperatura interior queda.
+
+2. **Punto de rocío del aire interior** (θr): es la temperatura a la que el vapor del aire
+   interior empieza a condensar. Se calcula con la temperatura y la humedad interior:
+
+   ```
+   presión de vapor del aire:   p = HR × ps(ti)
+   presión de saturación:       ps(θ) = 610,5 × e^( 17,269 × θ / (237,3 + θ) )    [Pa, θ en °C]
+   punto de rocío:              θr = 237,3 × ln(p / 610,5) / ( 17,269 − ln(p / 610,5) )
+   ```
+
+3. **Comparar:** hay condensación superficial si **θsi ≤ θr**. No hay si θsi > θr.
+
+**Ejemplo con datos inventados** (sólo para mostrar el procedimiento, no son los de la
+cátedra): pared exterior con Brimax portante 18 (RT = 1,731), ti = 20 °C, te = 0 °C, HR
+interior 60 %. Superficie interior: 20 − (0,130 / 1,731) × 20 = **18,5 °C**. Presión de
+vapor: 0,60 × 2339 = 1402 Pa, y el punto de rocío es **12,0 °C**. Como 18,5 > 12,0, **no
+hay condensación superficial**.
+
+## 5.4 Condensación intersticial (método de Glaser), paso a paso
+
+Se compara, en cada superficie de contacto entre capas, **cuánto vapor hay** con **cuánto
+vapor puede haber como máximo** a esa temperatura.
+
+1. **Temperatura en cada interfaz.** La temperatura baja de forma lineal con la
+   resistencia térmica acumulada, desde adentro hacia afuera:
+
+   ```
+   θn = ti − (Rsi + R1 + ... + Rn) / RT × (ti − te)
+   ```
+
+2. **Presión de saturación en cada interfaz:** ps(θn), con la misma fórmula del punto
+   anterior. Es el **máximo de vapor** que el aire puede tener a esa temperatura.
+
+3. **Presión de vapor real en cada interfaz.** El vapor atraviesa las capas frenado por su
+   μ. Se usa el **espesor equivalente de aire**, sd = μ × e (en metros), y la presión cae de
+   forma lineal con sd acumulado:
+
+   ```
+   pn = pi − (pi − pe) × (sd1 + ... + sdn) / (sd total)
+   ```
+
+   donde pi = HR interior × ps(ti) y pe = HR exterior × ps(te).
+
+4. **Comparar en cada interfaz:** si **pn > ps(θn)**, hay condensación ahí. Si pn ≤ ps(θn)
+   en todas, no hay condensación intersticial.
+
+5. **Diagrama de Glaser:** se dibuja el espesor equivalente de aire en el eje horizontal y la
+   presión en el vertical, con la línea de presión de vapor real y la curva de saturación.
+   Si la línea de vapor **toca o cruza** la curva de saturación, hay condensación en esa zona.
+
+**Ejemplo, primera parte** (misma pared y datos inventados; las presiones de vapor reales
+necesitan el μ de cada material):
+
+| Interfaz (de adentro hacia afuera) | R acumulada | Temperatura | Presión de saturación |
+|---|---|---|---|
+| Superficie interior | 0,130 | 18,5 °C | 2128 Pa |
+| Después del yeso | 0,165 | 18,1 °C | 2075 Pa |
+| Después del Brimax portante 18 | 1,665 | 0,8 °C | 645 Pa |
+| Después del azotado hidrófugo | 1,670 | 0,7 °C | 643 Pa |
+| Después del mortero exterior | 1,691 | 0,5 °C | 631 Pa |
+
+Se ve que **casi todo el salto de temperatura ocurre dentro del Brimax**, y que en la zona
+fría (después del Brimax) el aire sólo aguanta unos 640 Pa de vapor. Si la presión de vapor
+real ahí supera ese valor, se condensa. Eso depende de cuánto frenen el vapor las capas
+exteriores: un azotado hidrófugo frena mucho, y el vapor se acumula detrás de él.
+
+## 5.5 Cómo se interpreta el resultado
+
+- **Sin condensación superficial ni intersticial:** el cerramiento verifica.
+- **Condensación superficial:** el muro está demasiado frío por dentro. Se soluciona con
+  más aislación (menor K) o menos humedad interior.
+- **Condensación intersticial:** la solución clásica es una **barrera de vapor del lado
+  caliente** de la aislación (como el polietileno del techo de la casa) y que las capas
+  del lado frío dejen salir el vapor, es decir que tengan menos resistencia al vapor que
+  las del lado caliente.
+- La norma admite en algunos casos una **cantidad pequeña de condensado** si se puede
+  evaporar en la estación cálida. Hay que ver qué pide la cátedra.
+
 ---
 
 # Resumen de verificaciones
