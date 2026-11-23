@@ -24,7 +24,7 @@ ALTO, ALTO_TITULO = 19.8, 28.4
 FINA = Side(style="thin", color="000000")
 VERDE, ROJO = "1E7A3C", "C00000"
 TITULO = "VERIFICACIÓN DE TRANSMITANCIA TÉRMICA NORMA IRAM 11601"
-BRIMAX = "Ladrillo Brimax portante 18"
+BRIMAX = "Ladrillo HCCA Brimax 18 portante"
 LAMBDA_BRIMAX = 0.120     # la misma conductividad que ya se usa para el Brimax 20x60x5 (a confirmar con la ficha)
 
 # capa: (nombre, densidad, espesor, lambda)

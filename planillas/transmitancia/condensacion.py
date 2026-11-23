@@ -26,7 +26,7 @@ FINA = Side(style="thin", color="000000")
 BOX = Border(left=FINA, right=FINA, top=FINA, bottom=FINA)
 VERDE, ROJO = "1E7A3C", "C00000"
 TINT, TDMN, HR = 18.0, -4.0, 65.0
-BRIMAX = "Ladrillo Brimax portante 18"
+BRIMAX = "Ladrillo HCCA Brimax 18 portante"
 
 ELEMENTOS = [
  dict(titulo="CALCULO DE CONDENSACION SUPERFICIAL MURO", nombre="Muro exterior", rse=0.040, rsi=0.130, col0=1, capas=[

@@ -767,7 +767,7 @@ transmitancia. Las temperaturas y humedades de diseño las fija la norma o la c�
 3. **Comparar:** hay condensación superficial si **θsi ≤ θr**. No hay si θsi > θr.
 
 **Ejemplo con datos inventados** (sólo para mostrar el procedimiento, no son los de la
-cátedra): pared exterior con Brimax portante 18 (RT = 1,731), ti = 20 °C, te = 0 °C, HR
+cátedra): pared exterior con HCCA Brimax 18 portante (RT = 1,731), ti = 20 °C, te = 0 °C, HR
 interior 60 %. Superficie interior: 20 − (0,130 / 1,731) × 20 = **18,5 °C**. Presión de
 vapor: 0,60 × 2339 = 1402 Pa, y el punto de rocío es **12,0 °C**. Como 18,5 > 12,0, **no
 hay condensación superficial**.
@@ -811,7 +811,7 @@ necesitan el μ de cada material):
 |---|---|---|---|
 | Superficie interior | 0,130 | 18,5 °C | 2128 Pa |
 | Después del yeso | 0,165 | 18,1 °C | 2075 Pa |
-| Después del Brimax portante 18 | 1,665 | 0,8 °C | 645 Pa |
+| Después del HCCA Brimax 18 portante | 1,665 | 0,8 °C | 645 Pa |
 | Después del azotado hidrófugo | 1,670 | 0,7 °C | 643 Pa |
 | Después del mortero exterior | 1,691 | 0,5 °C | 631 Pa |
 
@@ -886,7 +886,12 @@ diferencia entre adentro y afuera. Cuanto menor, mejor aísla.
 5. **Verificación:** el cerramiento cumple si **K ≤ K máxima admisible** (Nivel B: 0,740
    para los muros y 0,380 para el techo).
 
-Resultados de la casa, con el Brimax portante 18: Pared Exterior K = 0,578; Pared
+**HCCA** significa hormigón celular curado en autoclave: el Brimax portante de 18 cm es un
+bloque de hormigón celular, no un ladrillo cerámico hueco. Su conductividad (λ = 0,120) y
+su permeabilidad al vapor (0,13 g/m.h.kPa, la misma del ladrillo hueco que reemplaza) son
+suposiciones a confirmar con la ficha del fabricante.
+
+Resultados de la casa, con el HCCA Brimax 18 portante: Pared Exterior K = 0,578; Pared
 Exterior B K = 0,579; pared doble en vigas perimetrales K = 0,683; techo K = 0,366.
 Todos cumplen.
 
