@@ -31,7 +31,7 @@ BRIMAX = "Ladrillo Brimax portante 18"
 ELEMENTOS = [
  dict(titulo="CALCULO DE CONDENSACION SUPERFICIAL MURO", nombre="Muro exterior", rse=0.040, rsi=0.130, col0=1, capas=[
    ("Material de frente acrílico", None, 0.0, None),
-   ("Mortero de cemento, cal y arena", None, 0.015, 0.930),
+   ("Mortero de cemento, cal y arena", None, 0.020, 0.930),
    ("Azotado hidráulico cemento arena e hidrófugo", None, 0.005, 1.130),
    (BRIMAX, None, 0.180, 0.120),
    ("Mortero de yeso monocapa", None, 0.020, 0.570),
