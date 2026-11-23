@@ -832,6 +832,64 @@ exteriores: un azotado hidrófugo frena mucho, y el vapor se acumula detrás de 
 - La norma admite en algunos casos una **cantidad pequeña de condensado** si se puede
   evaporar en la estación cálida. Hay que ver qué pide la cátedra.
 
+## 5.6 Cómo se lee cada planilla de condensación
+
+**Planilla de condensación superficial** (muro y cubierta, una al lado de la otra):
+
+| Parte de la planilla | Qué es |
+|---|---|
+| Tabla de capas | espesor, conductividad y R = e / λ de cada capa; R total (con Rse y Rsi) y K = 1 / R |
+| t int y TDMN | temperatura interior del local (18 °C) y temperatura mínima de diseño de invierno de Rosario (−4 °C) |
+| Δt | la diferencia entre las dos: 22 °C |
+| τ = (Rsi × Δt) / Rt | cuánto baja la temperatura sobre la cara interior del muro por la resistencia superficial |
+| (a) θsi = tint − τ | la temperatura real de la cara interior del muro |
+| (b) punto de rocío | la temperatura a la que el vapor del aire interior (18 °C y 65 % de humedad) empieza a condensar |
+| Relación y condición | si (a) > (b), la planilla dice **VERIFICA** |
+
+**Cálculos auxiliares.** Es el recuadro del pie de la planilla. Sirve para **dejar
+escrito cómo se obtuvo el punto de rocío (b)**, que es el único valor que no sale de
+las resistencias térmicas sino de la temperatura y la humedad del aire. Con el gráfico
+psicrométrico se anota la lectura; con la fórmula (como en la planilla armada) se
+escribe el desarrollo: presión de saturación a 18 °C = 2063 Pa; presión de vapor real
+con 65 % = 1341 Pa; punto de rocío = 11,3 °C. Así se ve que el 11,3 °C no es un número
+puesto a mano y se puede repetir la cuenta con otros datos.
+
+**Planilla de condensación intersticial.** Cada fila de "interfaz" es el contacto entre
+dos capas:
+
+| Columna | Qué es |
+|---|---|
+| T (°C) | temperatura en esa interfaz |
+| Permeab δ / Permean Δ | permeabilidad al vapor del material (δ, para capas con espesor) o permeancia (Δ, para películas delgadas como el látex, la barrera de vapor o la pintura) |
+| Rv | resistencia al paso del vapor de la capa: e / δ, o 1 / Δ |
+| HR (%) | humedad relativa del aire (65 % adentro, 80 % afuera) |
+| ρ (kPa) | presión de vapor real en esa interfaz: cae a lo largo del muro en proporción al Rv acumulado |
+| Tr (°C) | temperatura de rocío de esa presión de vapor |
+| Dif. (Δt) | T − Tr |
+
+**Se condensa donde la diferencia es negativa**, porque ahí la temperatura del material
+está por debajo del rocío del vapor que llega. En la casa: el muro **sin barrera de
+vapor condensa** después del Brimax y del azotado hidrófugo; el muro **con barrera de
+vapor** y la **cubierta** no condensan.
+
+# 6. Transmitancia térmica (IRAM 11601)
+
+Mide **cuánto calor pasa por un metro cuadrado de cerramiento** por cada grado de
+diferencia entre adentro y afuera. Cuanto menor, mejor aísla.
+
+1. **Resistencia de cada capa:** R = e / λ, con el espesor en metros y la conductividad
+   λ en W/mK. Las capas sin espesor (pinturas, látex, barreras de vapor) no suman.
+2. **Resistencias superficiales:** se suman la exterior (Rse = 0,040) y la interior
+   (Rsi = 0,130 en los muros, 0,100 en el techo).
+3. **Resistencia total:** Rt = Rse + R1 + R2 + ... + Rsi.
+4. **Transmitancia:** K = 1 / Rt, en W/m²K.
+5. **Verificación:** el cerramiento cumple si **K ≤ K máxima admisible** (Nivel B: 0,740
+   para los muros y 0,380 para el techo).
+
+Resultados de la casa, con el Brimax portante 18: Pared Exterior K = 0,578; Pared
+Exterior B K = 0,579; pared doble en vigas perimetrales K = 0,683; techo K = 0,366.
+Todos cumplen.
+
 ---
 
 # Resumen de verificaciones
